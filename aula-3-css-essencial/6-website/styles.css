@@ -50,11 +50,15 @@ nav {
   flex-wrap: wrap;
 }
 
-main {
+.limiter {
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
   gap: 24px;
+  justify-content: space-between;
+}
+
+main {
   padding: 40px 24px;
 }
 
