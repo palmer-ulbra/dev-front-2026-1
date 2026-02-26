@@ -1,0 +1,113 @@
+/* ===== CSS RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #000;
+  background-color: #f6f5f6;
+}
+
+a {
+  color: #5838ea;
+  text-decoration: none;
+  border-bottom: dotted 2px #5938ea89;
+}
+
+a:hover {
+  color: #e74c3c;
+}
+
+.header {
+  padding: 24px;
+  border-bottom: 2px solid #000;
+}
+
+.header > div {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 32px;
+  margin-bottom: 5px;
+}
+
+.header p {
+  font-size: 18px;
+  color: #666;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+main {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 40px 24px;
+}
+
+.section {
+  padding: 8px 16px;
+  border: solid 1px #000;
+}
+
+figure {
+  margin: 16px 0;
+}
+
+article {
+  margin-bottom: 24px;
+}
+
+article p {
+  color: #666;
+}
+
+article img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+aside {
+  padding: 8px 16px;
+  border: solid 1px #000;
+}
+
+aside ul {
+  margin: 0;
+  padding: 0;
+}
+
+.trending-list {
+  list-style: none;
+}
+
+.trending-list li {
+  margin-bottom: 8px;
+  color: #5838ea;
+}
+
+.trending-list li:last-child {
+  margin-bottom: 0;
+  color: #e74c3c;
+}
+
+.footer {
+  margin: 0 auto;
+  padding: 24px;
+  border-top: 2px solid #000;
+  text-align: center;
+}

@@ -1,0 +1,329 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  background-color: white;
+  color: black;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid black;
+}
+
+section {
+  margin-bottom: 40px;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+h3 {
+  margin: 20px 0 10px 0;
+  font-size: 1.1em;
+}
+
+h4 {
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+code {
+  background-color: #f0f0f0;
+  padding: 2px 5px;
+}
+
+/* Estilo padrão para containers de exemplo */
+section > div:not(.card-container) {
+  border: 2px solid black;
+  padding: 10px;
+  background-color: #f9f9f9;
+  margin-bottom: 15px;
+  min-height: 60px;
+}
+
+/* Estilo padrão para itens dentro dos containers */
+section > div > div {
+  background-color: lightcoral;
+  border: 1px solid red;
+  padding: 15px;
+  margin: 2px;
+  min-width: 60px;
+  text-align: center;
+}
+
+/* ===== 1. DISPLAY FLEX ===== */
+#flex-intro .sem-flex > div {
+  background-color: lightblue;
+  border: 1px solid blue;
+}
+
+#flex-intro .com-flex {
+  display: flex;
+}
+
+#flex-intro .com-flex > div {
+  background-color: lightgreen;
+  border: 1px solid green;
+}
+
+/* ===== 2. FLEX-DIRECTION ===== */
+#direction .row {
+  display: flex;
+  flex-direction: row;
+}
+
+#direction .row-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#direction .column {
+  display: flex;
+  flex-direction: column;
+}
+
+#direction .column-reverse {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+/* ===== 3. JUSTIFY-CONTENT ===== */
+#justify > div {
+  display: flex;
+}
+
+#justify .start {
+  justify-content: flex-start;
+}
+
+#justify .end {
+  justify-content: flex-end;
+}
+
+#justify .center {
+  justify-content: center;
+}
+
+#justify .between {
+  justify-content: space-between;
+}
+
+#justify .around {
+  justify-content: space-around;
+}
+
+#justify .evenly {
+  justify-content: space-evenly;
+}
+
+/* ===== 4. ALIGN-ITEMS ===== */
+#align > div {
+  display: flex;
+  min-height: 100px;
+}
+
+#align .top {
+  align-items: flex-start;
+}
+
+#align .bottom {
+  align-items: flex-end;
+}
+
+#align .middle {
+  align-items: center;
+}
+
+#align .stretch {
+  align-items: stretch;
+}
+
+/* ===== 5. FLEX-WRAP ===== */
+#wrap .nowrap {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+#wrap .nowrap > div {
+  min-width: 120px;
+}
+
+#wrap .wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#wrap .wrap > div {
+  min-width: 120px;
+}
+
+/* ===== 6. GAP ===== */
+#gap .sem-gap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#gap .gap-10 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#gap .gap-20 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* ===== 7. PROPRIEDADES DOS ITENS ===== */
+#item-props .grow {
+  display: flex;
+}
+
+#item-props .grow > div {
+  flex-grow: 1;
+}
+
+#item-props .grow .grow-2 {
+  flex-grow: 2;
+  background-color: lightyellow;
+  border-color: orange;
+}
+
+#item-props .shrink {
+  display: flex;
+  width: 400px;
+}
+
+#item-props .shrink > div {
+  flex-shrink: 1;
+  min-width: 200px;
+}
+
+#item-props .shrink .no-shrink {
+  flex-shrink: 0;
+  background-color: lightyellow;
+  border-color: orange;
+}
+
+#item-props .basis {
+  display: flex;
+}
+
+#item-props .basis-100 {
+  flex-basis: 100px;
+}
+
+#item-props .basis-200 {
+  flex-basis: 200px;
+  background-color: lightyellow;
+  border-color: orange;
+}
+
+#item-props .basis-150 {
+  flex-basis: 150px;
+}
+
+#item-props .flex-shorthand {
+  display: flex;
+}
+
+#item-props .flex-1 {
+  flex: 1;
+}
+
+#item-props .flex-2 {
+  flex: 2;
+  background-color: lightyellow;
+  border-color: orange;
+}
+
+/* ===== 8. ALIGN-SELF ===== */
+#align-self > div {
+  display: flex;
+  align-items: center;
+  min-height: 120px;
+}
+
+#align-self .self-start {
+  align-self: flex-start;
+  background-color: lightblue;
+  border-color: blue;
+}
+
+#align-self .self-end {
+  align-self: flex-end;
+  background-color: lightgreen;
+  border-color: green;
+}
+
+/* ===== 9. EXEMPLOS PRÁTICOS ===== */
+#pratico .menu {
+  display: flex;
+  gap: 20px;
+  background-color: #333;
+  padding: 15px;
+  border: 2px solid black;
+  margin-bottom: 20px;
+}
+
+#pratico .menu a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  background-color: #555;
+  border-radius: 3px;
+}
+
+#pratico .card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  background-color: #f0f0f0;
+  border: 2px solid black;
+  margin-bottom: 20px;
+}
+
+#pratico .card {
+  background-color: white;
+  border: 2px solid black;
+  padding: 30px;
+  text-align: center;
+  max-width: 300px;
+}
+
+#pratico .card button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: 1px solid black;
+  background-color: white;
+  cursor: pointer;
+}
+
+#pratico .colunas {
+  display: flex;
+  gap: 20px;
+}
+
+#pratico .colunas > div {
+  flex: 1;
+  background-color: lightblue;
+  border: 2px solid blue;
+  padding: 20px;
+}

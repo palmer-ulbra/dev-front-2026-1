@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guia Flexbox</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <h1>Guia Básico de Flexbox</h1>
+
+    <!-- DISPLAY FLEX -->
+    <section id="flex-intro">
+      <h2>1. Display: flex</h2>
+      <p>Para usar flexbox, defina <code>display: flex</code> no container pai.</p>
+
+      <h3>Sem flex (block padrão)</h3>
+      <div class="sem-flex">
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+      </div>
+
+      <h3>Com display: flex</h3>
+      <div class="com-flex">
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+      </div>
+    </section>
+
+    <!-- FLEX-DIRECTION -->
+    <section id="direction">
+      <h2>2. Flex-Direction (direção dos itens)</h2>
+
+      <h3>row (padrão - horizontal)</h3>
+      <div class="row">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+
+      <h3>row-reverse</h3>
+      <div class="row-reverse">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+
+      <h3>column (vertical)</h3>
+      <div class="column">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+
+      <h3>column-reverse</h3>
+      <div class="column-reverse">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+    </section>
+
+    <!-- JUSTIFY-CONTENT -->
+    <section id="justify">
+      <h2>3. Justify-Content (alinhamento no eixo principal)</h2>
+      <p>Quando flex-direction é row, alinha horizontalmente.</p>
+
+      <h3>flex-start (padrão)</h3>
+      <div class="start">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+
+      <h3>flex-end</h3>
+      <div class="end">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+
+      <h3>center</h3>
+      <div class="center">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+
+      <h3>space-between</h3>
+      <div class="between">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+
+      <h3>space-around</h3>
+      <div class="around">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+
+      <h3>space-evenly</h3>
+      <div class="evenly">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+    </section>
+
+    <!-- ALIGN-ITEMS -->
+    <section id="align">
+      <h2>4. Align-Items (alinhamento no eixo transversal)</h2>
+      <p>Quando flex-direction é row, alinha verticalmente.</p>
+
+      <h3>flex-start</h3>
+      <div class="top">
+        <div>1</div>
+        <div style="height: 60px">2</div>
+        <div>3</div>
+      </div>
+
+      <h3>flex-end</h3>
+      <div class="bottom">
+        <div>1</div>
+        <div style="height: 60px">2</div>
+        <div>3</div>
+      </div>
+
+      <h3>center</h3>
+      <div class="middle">
+        <div>1</div>
+        <div style="height: 60px">2</div>
+        <div>3</div>
+      </div>
+
+      <h3>stretch (padrão)</h3>
+      <div class="stretch">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+    </section>
+
+    <!-- FLEX-WRAP -->
+    <section id="wrap">
+      <h2>5. Flex-Wrap (quebra de linha)</h2>
+
+      <h3>nowrap (padrão - não quebra)</h3>
+      <div class="nowrap">
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+        <div>Item 4</div>
+        <div>Item 5</div>
+        <div>Item 6</div>
+      </div>
+
+      <h3>wrap (quebra quando necessário)</h3>
+      <div class="wrap">
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+        <div>Item 4</div>
+        <div>Item 5</div>
+        <div>Item 6</div>
+      </div>
+    </section>
+
+    <!-- GAP -->
+    <section id="gap">
+      <h2>6. Gap (espaçamento entre itens)</h2>
+
+      <h3>Sem gap</h3>
+      <div class="sem-gap">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+      </div>
+
+      <h3>gap: 10px</h3>
+      <div class="gap-10">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+      </div>
+
+      <h3>gap: 20px (vertical e horizontal)</h3>
+      <div class="gap-20">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+      </div>
+    </section>
+
+    <!-- PROPRIEDADES DOS ITENS -->
+    <section id="item-props">
+      <h2>7. Propriedades dos Itens Flex</h2>
+
+      <h3>flex-grow (crescimento proporcional)</h3>
+      <div class="grow">
+        <div>flex-grow: 1</div>
+        <div class="grow-2">flex-grow: 2</div>
+        <div>flex-grow: 1</div>
+      </div>
+
+      <h3>flex-shrink (encolhimento)</h3>
+      <p>Define se o item pode encolher quando não há espaço.</p>
+      <div class="shrink">
+        <div>flex-shrink: 1</div>
+        <div class="no-shrink">flex-shrink: 0 (não encolhe)</div>
+        <div>flex-shrink: 1</div>
+      </div>
+
+      <h3>flex-basis (tamanho base)</h3>
+      <div class="basis">
+        <div class="basis-100">flex-basis: 100px</div>
+        <div class="basis-200">flex-basis: 200px</div>
+        <div class="basis-150">flex-basis: 150px</div>
+      </div>
+
+      <h3>flex (atalho: grow shrink basis)</h3>
+      <div class="flex-shorthand">
+        <div class="flex-1">flex: 1</div>
+        <div class="flex-2">flex: 2</div>
+        <div class="flex-1">flex: 1</div>
+      </div>
+    </section>
+
+    <!-- ALIGN-SELF -->
+    <section id="align-self">
+      <h2>8. Align-Self (alinhamento individual)</h2>
+      <p>Permite que um item tenha alinhamento diferente dos outros.</p>
+
+      <div>
+        <div>Item normal</div>
+        <div class="self-start">align-self: flex-start</div>
+        <div>Item normal</div>
+        <div class="self-end">align-self: flex-end</div>
+        <div>Item normal</div>
+      </div>
+    </section>
+
+    <!-- EXEMPLOS PRÁTICOS -->
+    <section id="pratico">
+      <h2>9. Exemplos Práticos</h2>
+
+      <h3>Menu de navegação horizontal</h3>
+      <nav class="menu">
+        <a href="#">Home</a>
+        <a href="#">Sobre</a>
+        <a href="#">Serviços</a>
+        <a href="#">Contato</a>
+      </nav>
+
+      <h3>Card centralizado</h3>
+      <div class="card-container">
+        <div class="card">
+          <h4>Título do Card</h4>
+          <p>Conteúdo centralizado usando flexbox.</p>
+          <button>Ação</button>
+        </div>
+      </div>
+
+      <h3>Layout de 3 colunas</h3>
+      <div class="colunas">
+        <div>
+          <h4>Coluna 1</h4>
+          <p>Conteúdo da primeira coluna.</p>
+        </div>
+        <div>
+          <h4>Coluna 2</h4>
+          <p>Conteúdo da segunda coluna.</p>
+        </div>
+        <div>
+          <h4>Coluna 3</h4>
+          <p>Conteúdo da terceira coluna.</p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

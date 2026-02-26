@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Padding, Margin e Box Sizing</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <h1>Padding, Margin e Box-Sizing</h1>
+
+    <!-- PADDING -->
+    <section id="padding">
+      <h2>1. Padding (espaçamento interno)</h2>
+      <p>Padding é o espaço entre o conteúdo e a borda do elemento.</p>
+
+      <h3>Sem padding</h3>
+      <div class="sem">Conteúdo sem padding</div>
+
+      <h3>Com padding: 20px</h3>
+      <div class="com">Conteúdo com padding</div>
+
+      <h3>Padding diferente em cada lado</h3>
+      <div class="lados">
+        padding-top: 30px<br />
+        padding-right: 10px<br />
+        padding-bottom: 30px<br />
+        padding-left: 10px
+      </div>
+    </section>
+
+    <!-- MARGIN -->
+    <section id="margin">
+      <h2>2. Margin (espaçamento externo)</h2>
+      <p>Margin é o espaço entre elementos (fora da borda).</p>
+
+      <h3>Sem margin</h3>
+      <div>
+        <div class="sem-margin">Box 1</div>
+        <div class="sem-margin">Box 2</div>
+        <div class="sem-margin">Box 3</div>
+      </div>
+
+      <h3>Com margin: 20px</h3>
+      <div>
+        <div class="com-margin">Box 1</div>
+        <div class="com-margin">Box 2</div>
+        <div class="com-margin">Box 3</div>
+      </div>
+    </section>
+
+    <!-- COMPARAÇÃO -->
+    <section id="comparacao">
+      <h2>3. Diferença entre Padding e Margin</h2>
+
+      <div>
+        <h3>Apenas Padding</h3>
+        <div class="apenas-padding">
+          <div>Conteúdo interno tem mais espaço</div>
+        </div>
+      </div>
+
+      <div>
+        <h3>Apenas Margin</h3>
+        <div class="apenas-margin">
+          <div>Elemento tem espaço ao redor</div>
+        </div>
+      </div>
+
+      <div>
+        <h3>Padding + Margin</h3>
+        <div class="ambos">
+          <div>Espaço interno E externo</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOX MODEL -->
+    <section id="box-model">
+      <h2>4. Box Model (Modelo de Caixa)</h2>
+      <p>Todo elemento HTML é uma caixa com: conteúdo, padding, borda e margin.</p>
+
+      <div>
+        <div>
+          <span>MARGIN</span>
+          <div>
+            <span>BORDER</span>
+            <div>
+              <span>PADDING</span>
+              <div>CONTEÚDO</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOX-SIZING -->
+    <section id="box-sizing">
+      <h2>5. Box-Sizing</h2>
+      <p>Define como o tamanho (width/height) é calculado.</p>
+
+      <h3>box-sizing: content-box (padrão)</h3>
+      <p>Width não inclui padding e border. Tamanho final = width + padding + border</p>
+      <div class="content-box">
+        width: 200px<br />
+        padding: 20px<br />
+        border: 5px<br />
+        <strong>Tamanho real: 250px</strong>
+      </div>
+
+      <h3>box-sizing: border-box</h3>
+      <p>Width inclui padding e border. Tamanho final = width</p>
+      <div class="border-box">
+        width: 200px<br />
+        padding: 20px<br />
+        border: 5px<br />
+        <strong>Tamanho real: 200px</strong>
+      </div>
+    </section>
+
+    <!-- EXEMPLO PRÁTICO -->
+    <section id="pratico">
+      <h2>6. Exemplo Prático</h2>
+      <p>Duas boxes com mesma width (200px), mas tamanhos finais diferentes:</p>
+
+      <div>
+        <div class="exemplo-content">
+          <h4>content-box</h4>
+          <p>Ocupa mais espaço</p>
+        </div>
+
+        <div class="exemplo-border">
+          <h4>border-box</h4>
+          <p>Respeita o width</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHORTHAND -->
+    <section id="shorthand">
+      <h2>7. Atalhos (Shorthand)</h2>
+
+      <h3>4 valores: top, right, bottom, left</h3>
+      <div class="quatro">margin: 10px 20px 30px 40px</div>
+
+      <h3>2 valores: vertical, horizontal</h3>
+      <div class="dois">margin: 20px 40px</div>
+
+      <h3>1 valor: todos os lados</h3>
+      <div class="um">margin: 30px</div>
+    </section>
+  </body>
+</html>

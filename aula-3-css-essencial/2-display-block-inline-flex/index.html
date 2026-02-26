@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display Block Inline e Flex</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <h1>Display: Block, Inline e Flex</h1>
+
+    <!-- DISPLAY BLOCK -->
+    <section id="block">
+      <h2>1. Display: Block</h2>
+      <p>Elementos block ocupam toda a largura disponível e começam em uma nova linha.</p>
+
+      <div>
+        <div>Div 1 (block)</div>
+        <div>Div 2 (block)</div>
+        <div>Div 3 (block)</div>
+      </div>
+    </section>
+
+    <!-- DISPLAY INLINE -->
+    <section id="inline">
+      <h2>2. Display: Inline</h2>
+      <p>Elementos inline ficam na mesma linha. Não aceitam width e height.</p>
+
+      <div>
+        <span>Span 1</span>
+        <span>Span 2</span>
+        <span>Span 3</span>
+        <span>Span 4</span>
+      </div>
+    </section>
+
+    <!-- DISPLAY INLINE-BLOCK -->
+    <section id="inline-block">
+      <h2>3. Display: Inline-Block</h2>
+      <p>Fica na mesma linha (inline) mas aceita width e height (block).</p>
+
+      <div>
+        <div>Box 1</div>
+        <div>Box 2</div>
+        <div>Box 3</div>
+      </div>
+    </section>
+
+    <!-- COMPARAÇÃO -->
+    <section id="comparacao">
+      <h2>4. Comparação Visual</h2>
+
+      <div>
+        <h3>Block</h3>
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+      </div>
+
+      <div>
+        <h3>Inline</h3>
+        <span>Item 1</span>
+        <span>Item 2</span>
+        <span>Item 3</span>
+      </div>
+
+      <div>
+        <h3>Inline-Block</h3>
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+      </div>
+    </section>
+
+    <!-- DISPLAY FLEX -->
+    <section id="flex-basico">
+      <h2>5. Display: Flex</h2>
+      <p>Flexbox facilita o alinhamento e distribuição de elementos.</p>
+
+      <div>
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+      </div>
+    </section>
+
+    <!-- FLEX-DIRECTION -->
+    <section id="flex-direction">
+      <h2>6. Flex-Direction</h2>
+
+      <h3>flex-direction: row (padrão)</h3>
+      <div class="row">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+
+      <h3>flex-direction: column</h3>
+      <div class="column">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+    </section>
+
+    <!-- JUSTIFY-CONTENT -->
+    <section id="justify">
+      <h2>7. Justify-Content (alinhamento horizontal)</h2>
+
+      <h3>flex-start</h3>
+      <div class="start">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+
+      <h3>center</h3>
+      <div class="center">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+
+      <h3>space-between</h3>
+      <div class="between">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+
+      <h3>space-around</h3>
+      <div class="around">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+    </section>
+
+    <!-- ALIGN-ITEMS -->
+    <section id="align">
+      <h2>8. Align-Items (alinhamento vertical)</h2>
+
+      <h3>flex-start</h3>
+      <div class="top">
+        <div>1</div>
+        <div style="height: 60px">2</div>
+        <div>3</div>
+      </div>
+
+      <h3>center</h3>
+      <div class="middle">
+        <div>1</div>
+        <div style="height: 60px">2</div>
+        <div>3</div>
+      </div>
+
+      <h3>stretch</h3>
+      <div class="stretch">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+    </section>
+
+    <!-- GAP -->
+    <section id="gap">
+      <h2>9. Gap (espaçamento)</h2>
+
+      <h3>Sem gap</h3>
+      <div class="no-gap">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+
+      <h3>Com gap: 20px</h3>
+      <div class="with-gap">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,143 @@
+/* ===== APLICANDO RESET APENAS NO BODY E ESTRUTURA ===== */
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: white;
+  color: black;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid black;
+}
+
+section {
+  margin-bottom: 40px;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+section > h2 {
+  margin-bottom: 15px;
+}
+
+section > h3 {
+  margin: 20px 0 10px 0;
+}
+
+section > p {
+  margin-bottom: 15px;
+}
+
+/* ===== EXEMPLO SEM RESET ===== */
+/* Não aplicamos nenhum reset aqui, deixando os estilos padrão do navegador */
+#sem-reset .exemplo {
+  border: 2px solid red;
+  padding: 20px;
+  background-color: #ffe6e6;
+}
+
+/* ===== EXEMPLO COM RESET ===== */
+/* Aplicamos reset completo nesta seção */
+#com-reset .exemplo.com * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#com-reset .exemplo {
+  border: 2px solid green;
+  padding: 20px;
+  background-color: #e6ffe6;
+}
+
+#com-reset .exemplo.com ul {
+  list-style: none;
+}
+
+#com-reset .exemplo.com button,
+#com-reset .exemplo.com input {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  background: none;
+}
+
+/* Adicionando estilos mínimos para visualizar os elementos resetados */
+#com-reset .exemplo.com h3 {
+  margin-bottom: 10px;
+}
+
+#com-reset .exemplo.com p {
+  margin-bottom: 10px;
+}
+
+#com-reset .exemplo.com ul {
+  margin-bottom: 10px;
+}
+
+#com-reset .exemplo.com li {
+  padding: 5px 0;
+}
+
+#com-reset .exemplo.com button {
+  padding: 5px 10px;
+  border: 1px solid black;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+#com-reset .exemplo.com input {
+  border: 1px solid black;
+  padding: 5px;
+  margin-top: 10px;
+  width: 200px;
+}
+
+/* ===== BLOCOS DE CÓDIGO ===== */
+pre {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  padding: 15px;
+  overflow-x: auto;
+  margin: 15px 0;
+}
+
+code {
+  font-family: "Courier New", monospace;
+  font-size: 0.9em;
+}
+
+/* ===== DICAS ===== */
+.dica {
+  background-color: #f0f0f0;
+  padding: 15px;
+  margin: 20px 0;
+  border-left: 4px solid black;
+}
+
+.dica h3 {
+  margin-bottom: 10px;
+}
+
+.dica ul {
+  margin-left: 20px;
+}
+
+.dica li {
+  margin-bottom: 5px;
+}
+
+/* ===== LINKS ===== */
+a {
+  color: blue;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: darkblue;
+}

@@ -1,0 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  background-color: white;
+  color: black;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid black;
+}
+
+section {
+  margin-bottom: 40px;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+h3 {
+  margin: 20px 0 10px 0;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+/* ===== 1. DISPLAY BLOCK ===== */
+#block > div {
+  border: 2px solid black;
+  padding: 10px;
+}
+
+#block > div > div {
+  background-color: lightblue;
+  border: 1px solid blue;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+/* ===== 2. DISPLAY INLINE ===== */
+#inline > div {
+  border: 2px solid black;
+  padding: 10px;
+}
+
+#inline span {
+  display: inline;
+  background-color: lightgreen;
+  border: 1px solid green;
+  padding: 10px;
+}
+
+/* ===== 3. DISPLAY INLINE-BLOCK ===== */
+#inline-block > div {
+  border: 2px solid black;
+  padding: 10px;
+}
+
+#inline-block > div > div {
+  display: inline-block;
+  background-color: lightyellow;
+  border: 1px solid orange;
+  padding: 15px;
+  margin: 5px;
+  width: 150px;
+}
+
+/* ===== 4. COMPARAÇÃO ===== */
+#comparacao > div {
+  margin: 20px 0;
+  padding: 10px;
+  border: 1px solid #999;
+}
+
+#comparacao > div:nth-child(2) > div {
+  display: block;
+  background-color: lightblue;
+  border: 1px solid blue;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+#comparacao > div:nth-child(3) span {
+  display: inline;
+  background-color: lightgreen;
+  border: 1px solid green;
+  padding: 10px;
+}
+
+#comparacao > div:nth-child(4) > div {
+  display: inline-block;
+  background-color: lightyellow;
+  border: 1px solid orange;
+  padding: 10px;
+  margin: 5px;
+  width: 80px;
+}
+
+/* ===== 5. FLEX BÁSICO ===== */
+#flex-basico > div {
+  display: flex;
+  border: 2px solid black;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+#flex-basico > div > div {
+  background-color: lightcoral;
+  border: 1px solid red;
+  padding: 20px;
+  margin: 5px;
+  flex: 1;
+}
+
+/* ===== 6. FLEX-DIRECTION ===== */
+#flex-direction .row {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid black;
+  padding: 10px;
+  background-color: #f9f9f9;
+  margin-bottom: 20px;
+}
+
+#flex-direction .column {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+#flex-direction div > div {
+  background-color: lightcoral;
+  border: 1px solid red;
+  padding: 20px;
+  margin: 5px;
+  flex: 1;
+}
+
+/* ===== 7. JUSTIFY-CONTENT ===== */
+#justify > div {
+  display: flex;
+  border: 2px solid black;
+  padding: 10px;
+  background-color: #f9f9f9;
+  margin-bottom: 15px;
+  min-height: 60px;
+}
+
+#justify .start {
+  justify-content: flex-start;
+}
+
+#justify .center {
+  justify-content: center;
+}
+
+#justify .between {
+  justify-content: space-between;
+}
+
+#justify .around {
+  justify-content: space-around;
+}
+
+#justify div > div {
+  background-color: lightcoral;
+  border: 1px solid red;
+  padding: 15px 20px;
+}
+
+/* ===== 8. ALIGN-ITEMS ===== */
+#align > div {
+  display: flex;
+  border: 2px solid black;
+  padding: 10px;
+  background-color: #f9f9f9;
+  margin-bottom: 15px;
+  height: 120px;
+}
+
+#align .top {
+  align-items: flex-start;
+}
+
+#align .middle {
+  align-items: center;
+}
+
+#align .stretch {
+  align-items: stretch;
+}
+
+#align div > div {
+  background-color: lightcoral;
+  border: 1px solid red;
+  padding: 15px;
+  margin: 5px;
+}
+
+/* ===== 9. GAP ===== */
+#gap > div {
+  display: flex;
+  border: 2px solid black;
+  padding: 10px;
+  background-color: #f9f9f9;
+  margin-bottom: 15px;
+}
+
+#gap .with-gap {
+  gap: 20px;
+}
+
+#gap div > div {
+  background-color: lightcoral;
+  border: 1px solid red;
+  padding: 20px;
+  flex: 1;
+}

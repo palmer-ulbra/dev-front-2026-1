@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seletores Css</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <h1>Exemplos de Seletores CSS</h1>
+
+    <!-- 1. Seletor de Elemento (tag) -->
+    <section>
+      <h2>1. Seletor de Elemento</h2>
+      <p>Este parágrafo será estilizado pelo seletor de elemento "p".</p>
+      <p>Todos os parágrafos terão o mesmo estilo.</p>
+    </section>
+
+    <!-- 2. Seletor de Classe -->
+    <section>
+      <h2>2. Seletor de Classe</h2>
+      <p class="destaque">Este parágrafo tem a classe "destaque".</p>
+      <p>Este parágrafo não tem classe.</p>
+      <p class="destaque">Outro parágrafo com classe "destaque".</p>
+    </section>
+
+    <!-- 3. Seletor de ID -->
+    <section>
+      <h2>3. Seletor de ID</h2>
+      <p id="especial">Este parágrafo tem um ID único "especial".</p>
+      <p>Este parágrafo não tem ID.</p>
+    </section>
+
+    <!-- 4. Seletor de Descendente -->
+    <section>
+      <h2>4. Seletor de Descendente</h2>
+      <div class="container">
+        <p>Parágrafo dentro do container.</p>
+        <div>
+          <p>Parágrafo aninhado dentro do container.</p>
+        </div>
+      </div>
+      <p>Parágrafo fora do container.</p>
+    </section>
+
+    <!-- 5. Seletor de Filho Direto -->
+    <section>
+      <h2>5. Seletor de Filho Direto</h2>
+      <ul class="lista">
+        <li>Item filho direto</li>
+        <li>Item filho direto
+          <ul>
+            <li>Item neto (não é filho direto)</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 6. Seletor de Pseudo-classe -->
+    <section>
+      <h2>6. Pseudo-classes</h2>
+      <a href="#" class="link">Passe o mouse aqui</a>
+      <ul class="lista-numerada">
+        <li>Primeiro item</li>
+        <li>Segundo item</li>
+        <li>Terceiro item</li>
+      </ul>
+    </section>
+
+    <!-- 7. Seletor de Atributo -->
+    <section>
+      <h2>7. Seletor de Atributo</h2>
+      <input type="text" placeholder="Campo de texto" />
+      <input type="email" placeholder="Campo de email" />
+      <input type="password" placeholder="Campo de senha" />
+    </section>
+
+    <!-- 8. Múltiplas Classes -->
+    <section>
+      <h2>8. Múltiplas Classes</h2>
+      <p class="texto grande">Texto com classes "texto" e "grande".</p>
+      <p class="texto pequeno">Texto com classes "texto" e "pequeno".</p>
+    </section>
+
+    <!-- 9. Seletor Universal -->
+    <section>
+      <h2>9. Seletor Universal</h2>
+      <div class="box">
+        <p>Conteúdo na box</p>
+        <span>Mais conteúdo</span>
+      </div>
+    </section>
+  </body>
+</html>

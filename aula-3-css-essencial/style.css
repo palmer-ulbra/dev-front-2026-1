@@ -1,0 +1,25 @@
+h1 {
+  color: red;
+  font-size: 48px;
+}
+
+#sub-title {
+  color: green;
+  font-size: 32px;
+}
+
+.my-section {
+  color: #345;
+  font-size: 16px;
+}
+
+.container {
+  display: flex;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}

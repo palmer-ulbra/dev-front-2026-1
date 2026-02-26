@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Reset</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <h1>CSS Reset</h1>
+
+    <!-- O QUE É -->
+    <section id="intro">
+      <h2>O que é CSS Reset?</h2>
+      <p>
+        Navegadores aplicam estilos padrão diferentes para os elementos HTML. Um
+        CSS Reset remove esses estilos padrão para ter controle total.
+      </p>
+    </section>
+
+    <!-- EXEMPLO SEM RESET -->
+    <section id="sem-reset">
+      <h2>Exemplo SEM Reset (estilos padrão do navegador)</h2>
+
+      <div class="exemplo sem">
+        <h3>Título H3</h3>
+        <p>Este é um parágrafo com margin padrão do navegador.</p>
+        <p>Outro parágrafo.</p>
+        <ul>
+          <li>Item de lista</li>
+          <li>Com padding padrão</li>
+        </ul>
+        <button>Botão</button>
+        <input type="text" placeholder="Input com estilos padrão" />
+      </div>
+    </section>
+
+    <!-- EXEMPLO COM RESET -->
+    <section id="com-reset">
+      <h2>Exemplo COM Reset</h2>
+
+      <div class="exemplo com">
+        <h3>Título H3</h3>
+        <p>Este parágrafo não tem margin padrão.</p>
+        <p>Outro parágrafo.</p>
+        <ul>
+          <li>Item de lista</li>
+          <li>Sem padding/margin padrão</li>
+        </ul>
+        <button>Botão</button>
+        <input type="text" placeholder="Input resetado" />
+      </div>
+    </section>
+
+    <!-- RESET BÁSICO -->
+    <section id="reset-basico">
+      <h2>CSS Reset Básico</h2>
+      <pre><code>* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}</code></pre>
+      <p>Este é o reset mais simples. Remove margin e padding de tudo.</p>
+    </section>
+
+    <!-- RESET COMPLETO -->
+    <section id="reset-completo">
+      <h2>CSS Reset Mais Completo</h2>
+      <pre><code>* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.6;
+  font-family: sans-serif;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button, input, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}</code></pre>
+    </section>
+
+    <!-- RESETS FAMOSOS -->
+    <section id="resets-famosos">
+      <h2>Resets CSS Famosos</h2>
+
+      <h3>1. Normalize.css</h3>
+      <p>
+        Mantém os estilos úteis do navegador e normaliza as diferenças entre
+        navegadores. Mais moderno que um reset total.
+      </p>
+      <p>
+        <a href="https://necolas.github.io/normalize.css/" target="_blank"
+          >https://necolas.github.io/normalize.css/</a
+        >
+      </p>
+
+      <h3>2. Reset CSS (Eric Meyer)</h3>
+      <p>Um dos primeiros e mais usados. Remove todos os estilos padrão.</p>
+      <p>
+        <a href="https://meyerweb.com/eric/tools/css/reset/" target="_blank"
+          >https://meyerweb.com/eric/tools/css/reset/</a
+        >
+      </p>
+
+      <h3>3. A Modern CSS Reset (Josh Comeau)</h3>
+
+      <p>Um css reset mais enxuto.</p>
+      <p>
+        <a
+          href="https://www.joshwcomeau.com/css/custom-css-reset/"
+          target="_blank"
+        >
+          https://www.joshwcomeau.com/css/custom-css-reset/
+        </a>
+      </p>
+
+      <h3>4. Reset Customizado</h3>
+      <p>
+        Você pode criar seu próprio reset com apenas o que precisa para seu
+        projeto.
+      </p>
+    </section>
+
+    <!-- QUANDO USAR -->
+    <section id="quando-usar">
+      <h2>Quando usar CSS Reset?</h2>
+
+      <div class="dica">
+        <h3>✓ Use quando:</h3>
+        <ul>
+          <li>Quer controle total sobre os estilos</li>
+          <li>Precisa de consistência entre navegadores</li>
+          <li>Está começando um projeto do zero</li>
+        </ul>
+      </div>
+
+      <div class="dica">
+        <h3>✗ Não precisa quando:</h3>
+        <ul>
+          <li>Está usando um framework CSS (Bootstrap, Tailwind, etc)</li>
+          <li>Os estilos padrão do navegador já servem</li>
+          <li>É um projeto muito simples</li>
+        </ul>
+      </div>
+    </section>
+  </body>
+</html>
