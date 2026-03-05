@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* ===== CONTAINER COM GRID ===== */
+.container {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  grid-template-rows: 100px 1fr 80px;
+  gap: 10px;
+  min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+.header {
+  grid-column: 1 / 3; /* Ocupa as 2 colunas */
+  background-color: #667eea;
+  color: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+.sidebar p {
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color: white;
+}
+
+/* ===== MAIN ===== */
+.main {
+  background-color: #fafafa;
+  padding: 20px;
+}
+
+.main h2 {
+  margin-bottom: 20px;
+}
+
+/* Cards dentro do main usando grid */
+.cards {
+  display: grid;
+  grid-template-columns: 100px 150px 250px;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.card {
+  background-color: white;
+  border: 2px solid #ddd;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  grid-column: 1 / 3; /* Ocupa as 2 colunas */
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

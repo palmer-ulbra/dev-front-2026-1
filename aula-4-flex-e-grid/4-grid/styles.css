@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f5f5f5;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+section {
+  background: white;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+}
+
+h2 {
+  margin-bottom: 15px;
+  color: #555;
+  font-size: 18px;
+}
+
+h3 {
+  margin: 20px 0 10px 0;
+  color: #666;
+  font-size: 16px;
+}
+
+p {
+  margin-bottom: 15px;
+  color: #666;
+}
+
+code {
+  background: #f0f0f0;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+/* ===== CONTAINER PADRÃO ===== */
+.container {
+  border: 2px solid #ddd;
+  padding: 10px;
+  margin-bottom: 15px;
+  min-height: 100px;
+}
+
+/* ===== ITENS PADRÃO ===== */
+.item {
+  color: white;
+  padding: 20px;
+  text-align: center;
+  min-width: 60px;
+}
+
+/* Cores dos itens */
+.item-1 {
+  background: red;
+}
+
+.item-2 {
+  background: green;
+}
+
+.item-3 {
+  background: blue;
+}
+
+.item-4 {
+  background: orange;
+}
+
+.item-5 {
+  background: purple;
+}
+
+/* ===== 1. DISPLAY GRID ===== */
+.sem-grid {
+  border: 2px solid #ddd;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.sem-grid .block-item {
+  background: lightblue;
+  border: 1px solid blue;
+  color: #333;
+  padding: 15px;
+  margin: 5px 0;
+  text-align: center;
+}
+
+.com-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  border: 2px solid #ddd;
+  padding: 10px;
+}
+
+.com-grid .grid-item {
+  background: lightgreen;
+  border: 1px solid green;
+  color: #333;
+  padding: 15px;
+  text-align: center;
+}
+
+/* ===== 2. GRID-TEMPLATE-COLUMNS ===== */
+.grid-3-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.grid-fixed-flex {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 10px;
+}
+
+.grid-4-cols {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.grid-proportions {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 10px;
+}
+
+/* ===== 3. GRID-TEMPLATE-ROWS ===== */
+.grid-rows {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100px 150px 100px;
+  gap: 10px;
+}
+
+/* ===== 4. GAP ===== */
+.gap-0 {
+  gap: 0;
+}
+
+.gap-20 {
+  gap: 20px;
+}
+
+.gap-diff {
+  row-gap: 10px;
+  column-gap: 30px;
+}
+
+/* ===== 5. GRID-COLUMN / GRID-ROW ===== */
+.span-2 {
+  grid-column: span 2;
+}
+
+.span-3 {
+  grid-column: span 3;
+}
+
+.row-span-2 {
+  grid-row: span 2;
+}
+
+/* ===== 6. JUSTIFY E ALIGN ===== */
+.justify-start {
+  justify-items: start;
+}
+
+.justify-center {
+  justify-items: center;
+}
+
+.align-start {
+  align-items: start;
+  min-height: 150px;
+}
+
+.align-center {
+  align-items: center;
+  min-height: 150px;
+}
+
+/* ===== 7. GRID AREAS ===== */
+.grid-areas-container {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 80px 1fr 60px;
+  grid-template-areas:
+    'header header'
+    'sidebar main'
+    'footer footer';
+  gap: 10px;
+  min-height: 400px;
+  border: 2px solid #ddd;
+  padding: 10px;
+}
+
+.area-header {
+  grid-area: header;
+  background: #667eea;
+  color: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.area-sidebar {
+  grid-area: sidebar;
+  background: #f0f0f0;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.area-main {
+  grid-area: main;
+  background: #fafafa;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.area-footer {
+  grid-area: footer;
+  background: #333;
+  color: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

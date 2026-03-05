@@ -1,0 +1,168 @@
+@font-face {
+  font-family: "Beaufort for LOL";
+  src: url("fonts/BeaufortforLOL-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Beaufort for LOL";
+  src: url("fonts/BeaufortforLOL-HeavyItalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f0f0;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  background: #1a1a1a;
+  padding: 15px 0;
+  color: #fff;
+}
+
+.riot {
+  width: 75px;
+  height: 24px;
+  fill: #f9f9f9;
+}
+
+.nav,
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.nav-left {
+  gap: 20px;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  flex: 1;
+}
+
+.nav-menu a {
+  color: #fff;
+  text-decoration: none;
+  font: 600 13px/1 Arial;
+  letter-spacing: 0.5px;
+}
+
+.nav-menu a:hover {
+  color: #0bc6e3;
+}
+
+.nav-right {
+  gap: 15px;
+}
+
+.search-btn,
+.lang-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.play-btn {
+  background: #0bc6e3;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  font: bold 13px/1 Arial;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+}
+
+.play-btn:hover {
+  background: #0aa8c4;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px 60px;
+}
+
+.hero-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+  letter-spacing: 3px;
+}
+
+.hero-title {
+  font:
+    900 90px/1 "Beaufort for LOL",
+    serif;
+  font-style: italic;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  letter-spacing: -2px;
+}
+
+.hero-description {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.champions {
+  padding: 40px 20px 80px;
+}
+
+.champions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.champion-card {
+  background: #1a1a1a;
+  cursor: pointer;
+  transition: transform 0.3s;
+  font-family: "Beaufort for LOL", sans-serif;
+}
+
+.champion-card:hover {
+  transform: translateY(-10px);
+}
+
+.champion-card img {
+  width: 100%;
+  display: block;
+}
+
+.champion-card h3 {
+  color: #fff;
+  padding: 20px;
+  font: bold 18px/1 "Beaufort for LOL";
+  font-style: italic;
+  letter-spacing: 1px;
+}

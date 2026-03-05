@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid - Guia Completo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>CSS Grid - Guia Completo</h1>
+
+    <!-- DISPLAY GRID -->
+    <section>
+      <h2>1. Display: grid</h2>
+      <p>Para usar grid, defina <code>display: grid</code> no container pai.</p>
+
+      <h3>Sem grid (block padrão)</h3>
+      <div class="sem-grid">
+        <div class="block-item">Item 1</div>
+        <div class="block-item">Item 2</div>
+        <div class="block-item">Item 3</div>
+      </div>
+
+      <h3>Com display: grid</h3>
+      <div class="com-grid">
+        <div class="grid-item">Item 1</div>
+        <div class="grid-item">Item 2</div>
+        <div class="grid-item">Item 3</div>
+      </div>
+    </section>
+
+    <!-- GRID-TEMPLATE-COLUMNS -->
+    <section>
+      <h2>2. Grid-Template-Columns (colunas)</h2>
+      <p>Define o número e tamanho das colunas.</p>
+
+      <h3>grid-template-columns: 1fr 1fr 1fr (3 colunas iguais)</h3>
+      <div class="container grid-3-cols">
+        <div class="item item-1">1</div>
+        <div class="item item-2">2</div>
+        <div class="item item-3">3</div>
+        <div class="item item-4">4</div>
+        <div class="item item-5">5</div>
+        <div class="item item-1">6</div>
+      </div>
+
+      <h3>grid-template-columns: 200px 1fr (fixa + flexível)</h3>
+      <div class="container grid-fixed-flex">
+        <div class="item item-1">200px</div>
+        <div class="item item-2">1fr</div>
+        <div class="item item-3">200px</div>
+        <div class="item item-4">1fr</div>
+      </div>
+
+      <h3>grid-template-columns: repeat(4, 1fr) (4 colunas)</h3>
+      <div class="container grid-4-cols">
+        <div class="item item-1">1</div>
+        <div class="item item-2">2</div>
+        <div class="item item-3">3</div>
+        <div class="item item-4">4</div>
+      </div>
+
+      <h3>grid-template-columns: 1fr 2fr 1fr (proporções diferentes)</h3>
+      <div class="container grid-proportions">
+        <div class="item item-1">1fr</div>
+        <div class="item item-2">2fr</div>
+        <div class="item item-3">1fr</div>
+      </div>
+    </section>
+
+    <!-- GRID-TEMPLATE-ROWS -->
+    <section>
+      <h2>3. Grid-Template-Rows (linhas)</h2>
+      <p>Define o número e altura das linhas.</p>
+
+      <h3>grid-template-rows: 100px 150px 100px</h3>
+      <div class="container grid-rows">
+        <div class="item item-1">100px</div>
+        <div class="item item-2">100px</div>
+        <div class="item item-3">150px</div>
+        <div class="item item-4">150px</div>
+        <div class="item item-5">100px</div>
+        <div class="item item-1">100px</div>
+      </div>
+    </section>
+
+    <!-- GAP -->
+    <section>
+      <h2>4. Gap (espaçamento)</h2>
+
+      <h3>Sem gap</h3>
+      <div class="container grid-3-cols gap-0">
+        <div class="item item-1">1</div>
+        <div class="item item-2">2</div>
+        <div class="item item-3">3</div>
+        <div class="item item-4">4</div>
+        <div class="item item-5">5</div>
+        <div class="item item-1">6</div>
+      </div>
+
+      <h3>gap: 20px (mesmo espaço vertical e horizontal)</h3>
+      <div class="container grid-3-cols gap-20">
+        <div class="item item-1">1</div>
+        <div class="item item-2">2</div>
+        <div class="item item-3">3</div>
+        <div class="item item-4">4</div>
+        <div class="item item-5">5</div>
+        <div class="item item-1">6</div>
+      </div>
+
+      <h3>row-gap: 10px / column-gap: 30px (espaços diferentes)</h3>
+      <div class="container grid-3-cols gap-diff">
+        <div class="item item-1">1</div>
+        <div class="item item-2">2</div>
+        <div class="item item-3">3</div>
+        <div class="item item-4">4</div>
+        <div class="item item-5">5</div>
+        <div class="item item-1">6</div>
+      </div>
+    </section>
+
+    <!-- GRID-COLUMN / GRID-ROW -->
+    <section>
+      <h2>5. Grid-Column / Grid-Row (posicionamento)</h2>
+      <p>Define quanto espaço um item ocupa.</p>
+
+      <h3>grid-column: span 2 (ocupa 2 colunas)</h3>
+      <div class="container grid-3-cols">
+        <div class="item item-1 span-2">span 2</div>
+        <div class="item item-2">Item</div>
+        <div class="item item-3">Item</div>
+        <div class="item item-4">Item</div>
+        <div class="item item-5">Item</div>
+      </div>
+
+      <h3>grid-column: span 3 (ocupa 3 colunas)</h3>
+      <div class="container grid-3-cols">
+        <div class="item item-1 span-3">span 3</div>
+        <div class="item item-2">Item</div>
+        <div class="item item-3">Item</div>
+        <div class="item item-4">Item</div>
+      </div>
+
+      <h3>grid-row: span 2 (ocupa 2 linhas)</h3>
+      <div class="container grid-3-cols">
+        <div class="item item-1 row-span-2">row span 2</div>
+        <div class="item item-2">Item</div>
+        <div class="item item-3">Item</div>
+        <div class="item item-4">Item</div>
+        <div class="item item-5">Item</div>
+      </div>
+    </section>
+
+    <!-- JUSTIFY E ALIGN -->
+    <section>
+      <h2>6. Justify-Items e Align-Items</h2>
+      <p>Alinha os itens dentro de suas células.</p>
+
+      <h3>justify-items: start (horizontal)</h3>
+      <div class="container grid-3-cols justify-start">
+        <div class="item item-1">1</div>
+        <div class="item item-2">2</div>
+        <div class="item item-3">3</div>
+      </div>
+
+      <h3>justify-items: center (horizontal)</h3>
+      <div class="container grid-3-cols justify-center">
+        <div class="item item-1">1</div>
+        <div class="item item-2">2</div>
+        <div class="item item-3">3</div>
+      </div>
+
+      <h3>align-items: start (vertical)</h3>
+      <div class="container grid-3-cols align-start">
+        <div class="item item-1">1</div>
+        <div class="item item-2">2</div>
+        <div class="item item-3">3</div>
+      </div>
+
+      <h3>align-items: center (vertical)</h3>
+      <div class="container grid-3-cols align-center">
+        <div class="item item-1">1</div>
+        <div class="item item-2">2</div>
+        <div class="item item-3">3</div>
+      </div>
+    </section>
+
+    <!-- GRID AREAS -->
+    <section>
+      <h2>7. Grid-Template-Areas (layout nomeado)</h2>
+      <p>Define áreas nomeadas para criar layouts complexos.</p>
+
+      <div class="grid-areas-container">
+        <div class="area-header">Header</div>
+        <div class="area-sidebar">Sidebar</div>
+        <div class="area-main">Main Content</div>
+        <div class="area-footer">Footer</div>
+      </div>
+    </section>
+  </body>
+</html>

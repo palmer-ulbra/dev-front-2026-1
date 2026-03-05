@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* ===== HEADER COM FLEXBOX ===== */
+/* Usa space-between para separar logo e navegação */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Navegação também usa flex para alinhar os links */
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 15px;
+}
+
+.nav a:hover {
+  background-color: #555;
+}
+
+/* ===== HERO SECTION ===== */
+/* Centraliza conteúdo vertical e horizontal */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  background-color: #667eea;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.btn {
+  padding: 12px 30px;
+  font-size: 16px;
+  border: 2px solid white;
+  background-color: white;
+  color: #667eea;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: transparent;
+  color: white;
+}
+
+/* ===== CONTAINER PADRÃO ===== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.container h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* ===== CARDS COM FLEXBOX ===== */
+/* 3 colunas que se ajustam automaticamente */
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1 1 300px; /* grow, shrink, basis */
+  background-color: #f5f5f5;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.card-icon {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.card-link {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+/* ===== INFO SECTION ===== */
+/* 2 colunas responsivas */
+.info-section {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.info-item {
+  flex: 1 1 400px; /* 2 colunas em telas grandes */
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-left: 4px solid #667eea;
+}
+
+.info-item h3 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.info-item p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: 40px;
+}

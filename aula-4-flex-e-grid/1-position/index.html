@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Position CSS</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <h1>Exemplos de Position CSS</h1>
+
+    <!-- 1. Static (padrão) -->
+    <section>
+      <h2>1. Position: Static (padrão)</h2>
+      <p>
+        Static é o valor padrão. Elementos seguem o fluxo normal do documento.
+      </p>
+      <div class="exemplo-static">
+        <div class="box box-static">Box 1</div>
+        <div class="box box-static">Box 2</div>
+        <div class="box box-static">Box 3</div>
+      </div>
+    </section>
+
+    <!-- 2. Relative -->
+    <section>
+      <h2>2. Position: Relative</h2>
+      <p>
+        Relative permite mover o elemento em relação à sua posição original, mas
+        mantém o espaço ocupado.
+      </p>
+      <div class="exemplo-relative">
+        <div class="box">Box 1</div>
+        <div class="box box-relative">Box 2 (relative - movido)</div>
+        <div class="box">Box 3</div>
+      </div>
+    </section>
+
+    <!-- 3. Relative + Absolute -->
+    <section>
+      <h2>3. Position: Relative + Absolute</h2>
+      <p>
+        Um elemento absolute se posiciona em relação ao primeiro ancestral com
+        position diferente de static.
+      </p>
+      <div class="container-relative">
+        Container com position: relative
+        <div class="box box-absolute-1">Absolute (top-right)</div>
+        <div class="box box-absolute-2">Absolute (bottom-left)</div>
+        <p>Conteúdo normal do container...</p>
+        <p>Os elementos absolute não ocupam espaço no fluxo.</p>
+      </div>
+    </section>
+
+    <!-- 4. Fixed -->
+    <section>
+      <h2>4. Position: Fixed</h2>
+      <p>
+        Fixed posiciona o elemento em relação à viewport. Ele fica fixo mesmo ao
+        rolar a página.
+      </p>
+      <div class="exemplo-fixed">
+        <div class="box box-fixed">
+          Fixo no canto inferior direito<br />
+          (role a página para ver)
+        </div>
+        <p>Role a página para baixo para ver o elemento fixo em ação.</p>
+      </div>
+    </section>
+
+    <!-- 5. Sticky -->
+    <section>
+      <h2>5. Position: Sticky</h2>
+      <p>
+        Sticky alterna entre relative e fixed. O elemento fica fixo quando
+        alcança uma posição específica ao rolar.
+      </p>
+      <div class="exemplo-sticky">
+        <div class="box box-sticky">Sticky Header - role para ver</div>
+        <p>Role a página para baixo...</p>
+        <p>Este é um parágrafo de exemplo.</p>
+        <p>Este é um parágrafo de exemplo.</p>
+        <p>Este é um parágrafo de exemplo.</p>
+        <p>Este é um parágrafo de exemplo.</p>
+        <p>Este é um parágrafo de exemplo.</p>
+        <p>Este é um parágrafo de exemplo.</p>
+        <p>
+          O elemento sticky ficará fixo no topo quando você rolar para baixo.
+        </p>
+      </div>
+    </section>
+
+    <!-- Conteúdo extra para testar scroll -->
+    <section>
+      <h2>Conteúdo Extra (para testar scroll)</h2>
+      <p>Este conteúdo serve para criar altura na página.</p>
+      <p>Role para cima e para baixo para ver fixed e sticky em ação.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      <p>Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+      <p>Excepteur sint occaecat cupidatat non proident.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      <p>Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+      <p>Excepteur sint occaecat cupidatat non proident.</p>
+    </section>
+  </body>
+</html>
