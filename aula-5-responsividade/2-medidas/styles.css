@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Se voce mudar esse valor, tudo que usa rem muda junto */
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: sans-serif;
+  padding: 2rem 1rem;
+}
+
+h1 {
+  margin-bottom: 0.25rem;
+}
+
+body > p {
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+/* ---- Card base ---- */
+
+.card {
+  border: 1px solid #ccc;
+  margin-bottom: 1.5rem;
+}
+
+.card h2 {
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+/* =============================================
+   FIXO — tudo em px
+   Em telas menores que 450px ele estoura
+   ============================================= */
+
+.card-fixed {
+  width: 450px;
+  padding: 32px;
+  font-size: 18px;
+}
+
+/* =============================================
+   FLUIDO — % na largura, rem no resto
+   Se adapta a qualquer tela
+   ============================================= */
+
+.card-fluid {
+  width: 90%;
+  max-width: 450px;
+  padding: 2rem;
+  font-size: 1.125rem;
+}

@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: sans-serif;
+  padding: 2rem 1rem;
+}
+
+article {
+  padding: 1rem;
+  border: solid 1px black;
+}
+
+.news-list {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .news-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}

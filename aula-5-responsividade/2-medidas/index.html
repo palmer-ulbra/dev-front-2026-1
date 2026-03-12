@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>px vs % vs rem</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>px vs % vs rem</h1>
+    <p>Diminua a largura da janela e veja qual card quebra primeiro.</p>
+
+    <div class="card card-fixed">
+      <h2>Card com px (fixo)</h2>
+      <p>
+        Este card usa largura fixa em pixels. Em telas pequenas ele vai
+        "estourar" para fora da tela.
+      </p>
+      <button>Saiba mais</button>
+    </div>
+
+    <div class="card card-fluid">
+      <h2>Card com % e rem (fluido)</h2>
+      <p>
+        Este card usa porcentagem na largura e rem no texto e espacamento.
+        Ele se adapta ao tamanho da tela.
+      </p>
+      <button>Saiba mais</button>
+    </div>
+  </body>
+</html>
