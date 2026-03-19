@@ -23,13 +23,13 @@ body {
 /* tablet */
 @media (min-width: 768px) {
   .items {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 /* desktop */
 @media (min-width: 1024px) {
   .items {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }

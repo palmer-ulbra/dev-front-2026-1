@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #000;
+  background-color: #f6f5f6;
+}
+
+/* ===== HEADER ===== */
+.header {
+  background-color: #000;
+  padding: 0.5rem 1rem;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem 1.5rem;
+}
+
+.menu-item {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+/* ===== MAIN ===== */
+.main {
+  padding: 1.5rem 1rem;
+}
+
+.section {
+  display: grid;
+  grid-template-columns: 1fr; /* mobile: 1 coluna */
+  gap: 1.5rem;
+}
+
+img {
+  width: 100%;
+  height: auto; /* novo: mantem proporcao da imagem */
+}
+
+.footer {
+  background-color: #000;
+  color: #666;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 0.75rem;
+}
+
+/* ===== TABLET (768px) ===== */
+/* novo: media query para telas maiores */
+@media (min-width: 768px) {
+  .section {
+    grid-template-columns: 1fr 1fr; /* 2 colunas */
+  }
+  .menu {
+    flex-direction: row;
+  }
+  .menu-item {
+    font-size: 1rem;
+  }
+}
+
+/* ===== DESKTOP (1024px) ===== */
+@media (min-width: 1024px) {
+  .section {
+    grid-template-columns: 1fr 1fr 1fr; /* 3 colunas */
+  }
+}
