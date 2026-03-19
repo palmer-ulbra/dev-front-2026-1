@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  max-width: 480px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+legend {
+  font-weight: bold;
+}
+
+label,
+.radio-group span {
+  display: block;
+  margin-top: 12px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+  display: block;
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+}
+
+.radio-group label {
+  display: inline;
+  margin-right: 12px;
+}
+
+.checkbox-label {
+  margin-top: 0;
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#message {
+  margin-top: 16px;
+}

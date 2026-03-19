@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Login</h1>
+
+      <form action="http://localhost:3333/login" method="post">
+        <div>
+          <label for="user_email">Seu E-mail</label>
+          <input type="email" name="user_email" id="user_email" />
+        </div>
+        <div>
+          <label for="user_pass">Sua Senha</label>
+          <input type="password" name="user_pass" id="user_pass" />
+        </div>
+        <div>
+          <button type="submit">Enviar</button>
+        </div>
+      </form>
+    </div>
+    <div class="container">
+      <h1>Login via JSON</h1>
+      <form id="form-json">
+        <div>
+          <label for="user_email">Seu E-mail</label>
+          <input type="email" name="user_email" id="user_email" />
+        </div>
+        <div>
+          <label for="user_pass">Sua Senha</label>
+          <input type="password" name="user_pass" id="user_pass" />
+        </div>
+        <div>
+          <button type="submit">Enviar</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      const $form = document.getElementById("form-json");
+
+      $form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const formData = new FormData($form);
+        const data = Object.fromEntries(formData);
+
+        const response = await fetch("http://localhost:3333/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+
+        const result = await response.json();
+        console.log(result);
+      });
+    </script>
+  </body>
+</html>

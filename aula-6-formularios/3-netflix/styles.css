@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: white;
+  background: linear-gradient(360deg, rgb(25, 1, 1) 60%, rgb(98, 20, 20) 100%);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.5); /* Ajuste o valor (0 a 1) para mudar a cor */
+}
+
+.container {
+  max-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.login {
+  margin: 0 auto;
+  max-width: 480px;
+  width: 100%;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login-title {
+  text-align: center;
+  font-size: 32px;
+}
+
+.login-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.input {
+  padding: 12px 24px;
+  border: solid 1px gray;
+  font-family: inherit;
+  font-size: 18px;
+  height: 48px;
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+}
+
+.input:focus {
+  caret-color: rgb(255, 255, 255);
+  border: solid 1px white;
+}
+
+.button {
+  display: inline-flex;
+  padding: 12px 24px;
+  font-family: inherit;
+  font-size: 18px;
+  color: white;
+  background-color: rgb(229, 9, 20);
+  border: none;
+  height: 48px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: ease-in-out 0.3s background;
+}
+
+.button:hover {
+  background-color: rgb(178, 11, 20);
+}
+
+.links {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.links a {
+  color: rgb(255, 255, 255);
+}
+
+.links a:hover {
+  color: rgb(126, 126, 126);
+}

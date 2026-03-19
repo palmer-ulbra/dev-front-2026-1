@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Riot Games</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="bg">
+        <video autoplay="" muted="" loop="" playsinline="" class="video">
+          <source
+            data-testid="source-video/webm"
+            src="./media/video.webm"
+            type="video/webm"
+          />
+        </video>
+      </div>
+      <header class="header">
+        <img src="./media/riot.svg" alt="Logo da Riot" width="100" />
+      </header>
+      <main class="main">
+        <form class="login" method="post">
+          <h2 class="login-title">Sign in</h2>
+          <div class="login-item">
+            <label for="user_email">E-mail</label>
+            <input
+              type="email"
+              name="user_email"
+              id="user_email"
+              required
+              placeholder="email@email.com"
+              class="input"
+            />
+          </div>
+          <div class="login-item">
+            <label for="user_password">Password</label>
+            <input
+              type="password"
+              name="user_password"
+              id="user_password"
+              required
+              placeholder="******"
+              class="input"
+            />
+          </div>
+          <div class="login-item">
+            <button type="submit" class="button">Submit</button>
+          </div>
+          <p class="links">
+            <a href="./forgot-password.html">Can't sign in?</a>
+            <a href="./sign-up.html">Create account</a>
+          </p>
+        </form>
+      </main>
+      <footer class="footer">
+        © 2026 Riot Games, Inc. Todos os direitos reservados.
+      </footer>
+    </div>
+  </body>
+</html>

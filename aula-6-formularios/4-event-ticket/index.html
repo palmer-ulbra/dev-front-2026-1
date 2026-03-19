@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ticket Event</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Event Ticket</h1>
+
+    <form id="ticket-form">
+      <fieldset>
+        <legend>Dados da pessoa</legend>
+
+        <label for="name">Nome completo</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required />
+      </fieldset>
+
+      <fieldset>
+        <legend>Dados do ingresso</legend>
+
+        <label for="ticket-type">Tipo de ingresso</label>
+        <select id="ticket-type" name="ticketType" required>
+          <option value="">Selecione...</option>
+          <option value="pista">Pista</option>
+          <option value="vip">VIP</option>
+          <option value="estudante">Estudante</option>
+        </select>
+
+        <label for="quantity">Quantidade de ingressos</label>
+        <input
+          type="number"
+          id="quantity"
+          name="quantity"
+          min="1"
+          max="10"
+          value="1"
+          required
+        />
+
+        <label for="event-date">Data do evento</label>
+        <select id="event-date" name="eventDate" required>
+          <option value="">Selecione a data...</option>
+          <option value="2026-04-10">10/04/2026 - Sexta</option>
+          <option value="2026-04-11">11/04/2026 - Sábado</option>
+          <option value="2026-04-12">12/04/2026 - Domingo</option>
+        </select>
+
+        <div class="radio-group">
+          <span>Turno / sessão</span>
+          <label>
+            <input type="radio" name="session" value="manha" required />
+            Manhã
+          </label>
+          <label>
+            <input type="radio" name="session" value="tarde" />
+            Tarde
+          </label>
+          <label>
+            <input type="radio" name="session" value="noite" />
+            Noite
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Informações extras</legend>
+
+        <label class="checkbox-label">
+          <input type="checkbox" name="terms" required />
+          Aceito os termos e condições
+        </label>
+      </fieldset>
+
+      <button type="submit">Comprar ingresso</button>
+    </form>
+
+    <div id="message" hidden></div>
+
+    <script>
+      const URL =
+        "https://db3a-2804-2984-9525-6000-ccdd-ea0d-eb35-1f94.ngrok-free.app/tickets";
+      const form = document.getElementById("ticket-form");
+      const message = document.getElementById("message");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+
+        const body = {
+          name: formData.get("name"),
+          email: formData.get("email"),
+          ticketType: formData.get("ticketType"),
+          quantity: Number(formData.get("quantity")),
+          eventDate: formData.get("eventDate"),
+          session: formData.get("session"),
+          terms: formData.has("terms"),
+        };
+
+        try {
+          const response = await fetch(URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body),
+          });
+
+          if (!response.ok) {
+            throw new Error("Erro ao enviar");
+          }
+
+          const data = await response.json();
+          message.textContent = "Ingresso comprado com sucesso!";
+          message.hidden = false;
+          form.reset();
+        } catch (err) {
+          message.textContent = "Erro: " + err.message;
+          message.hidden = false;
+        }
+      });
+    </script>
+  </body>
+</html>

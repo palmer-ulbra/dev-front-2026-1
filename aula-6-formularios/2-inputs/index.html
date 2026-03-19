@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inputs</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <h1>Todos os Tipos de Inputs</h1>
+
+    <form action="#" method="post">
+
+      <!-- Texto -->
+      <fieldset>
+        <legend>Campos de Texto</legend>
+
+        <label for="texto">Text</label>
+        <input type="text" id="texto" name="texto" placeholder="Digite um texto" />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="seu@email.com" />
+
+        <label for="senha">Password</label>
+        <input type="password" id="senha" name="senha" placeholder="Sua senha" />
+
+        <label for="telefone">Tel</label>
+        <input type="tel" id="telefone" name="telefone" placeholder="(51) 99999-9999" />
+
+        <label for="url">URL</label>
+        <input type="url" id="url" name="url" placeholder="https://exemplo.com" />
+
+        <label for="busca">Search</label>
+        <input type="search" id="busca" name="busca" placeholder="Buscar..." />
+
+        <label for="textarea">Textarea</label>
+        <textarea id="textarea" name="textarea" rows="4" placeholder="Texto longo aqui..."></textarea>
+      </fieldset>
+
+      <!-- Numeros -->
+      <fieldset>
+        <legend>Campos Numéricos</legend>
+
+        <label for="numero">Number</label>
+        <input type="number" id="numero" name="numero" min="0" max="100" step="1" value="50" />
+
+        <label for="range">Range</label>
+        <input type="range" id="range" name="range" min="0" max="100" value="50" />
+      </fieldset>
+
+      <!-- Data e Hora -->
+      <fieldset>
+        <legend>Data e Hora</legend>
+
+        <label for="data">Date</label>
+        <input type="date" id="data" name="data" />
+
+        <label for="hora">Time</label>
+        <input type="time" id="hora" name="hora" />
+
+        <label for="datahora">Datetime-local</label>
+        <input type="datetime-local" id="datahora" name="datahora" />
+
+        <label for="mes">Month</label>
+        <input type="month" id="mes" name="mes" />
+
+        <label for="semana">Week</label>
+        <input type="week" id="semana" name="semana" />
+      </fieldset>
+
+      <!-- Seleção -->
+      <fieldset>
+        <legend>Campos de Seleção</legend>
+
+        <label>Checkbox</label>
+        <div>
+          <input type="checkbox" id="check1" name="frutas" value="banana" />
+          <label for="check1">Banana</label>
+
+          <input type="checkbox" id="check2" name="frutas" value="maca" />
+          <label for="check2">Maçã</label>
+
+          <input type="checkbox" id="check3" name="frutas" value="uva" checked />
+          <label for="check3">Uva</label>
+        </div>
+
+        <label>Radio</label>
+        <div>
+          <input type="radio" id="cor1" name="cor" value="vermelho" />
+          <label for="cor1">Vermelho</label>
+
+          <input type="radio" id="cor2" name="cor" value="azul" checked />
+          <label for="cor2">Azul</label>
+
+          <input type="radio" id="cor3" name="cor" value="verde" />
+          <label for="cor3">Verde</label>
+        </div>
+
+        <label for="select">Select</label>
+        <select id="select" name="estado">
+          <option value="" disabled selected>Escolha um estado</option>
+          <option value="rs">Rio Grande do Sul</option>
+          <option value="sc">Santa Catarina</option>
+          <option value="pr">Paraná</option>
+        </select>
+
+        <label for="select-multi">Select Múltiplo</label>
+        <select id="select-multi" name="linguagens" multiple size="4">
+          <option value="js">JavaScript</option>
+          <option value="py">Python</option>
+          <option value="java">Java</option>
+          <option value="go">Go</option>
+        </select>
+
+        <label for="datalist-input">Datalist (autocomplete)</label>
+        <input type="text" id="datalist-input" name="navegador" list="navegadores" placeholder="Digite para buscar..." />
+        <datalist id="navegadores">
+          <option value="Chrome"></option>
+          <option value="Firefox"></option>
+          <option value="Safari"></option>
+          <option value="Edge"></option>
+        </datalist>
+      </fieldset>
+
+      <!-- Arquivo e Cor -->
+      <fieldset>
+        <legend>Arquivo e Cor</legend>
+
+        <label for="arquivo">File</label>
+        <input type="file" id="arquivo" name="arquivo" accept="image/*" />
+
+        <label for="cor">Color</label>
+        <input type="color" id="cor-picker" name="cor-picker" value="#6366f1" />
+      </fieldset>
+
+      <!-- Oculto e Desabilitado -->
+      <fieldset>
+        <legend>Estados Especiais</legend>
+
+        <label for="readonly">Readonly</label>
+        <input type="text" id="readonly" name="readonly" value="Não pode editar" readonly />
+
+        <label for="desabilitado">Disabled</label>
+        <input type="text" id="desabilitado" name="desabilitado" value="Desabilitado" disabled />
+
+        <input type="hidden" name="campo_oculto" value="valor-secreto" />
+        <small>Há um input <code>hidden</code> aqui (não visível)</small>
+      </fieldset>
+
+      <!-- Botões -->
+      <fieldset>
+        <legend>Botões</legend>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+        <button type="button">Button (sem ação)</button>
+      </fieldset>
+
+    </form>
+  </body>
+</html>
