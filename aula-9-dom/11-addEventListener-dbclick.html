@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minha página</title>
+  </head>
+  <body>
+    <div
+      id="duploClique"
+      style="
+        width: 150px;
+        height: 100px;
+        background: #ddd;
+        text-align: center;
+        line-height: 100px;
+      "
+    >
+      Dê dois cliques aqui
+    </div>
+
+    <script>
+      const box = document.getElementById("duploClique");
+
+      box.addEventListener("dblclick", () => {
+        alert("Você deu dois cliques!");
+      });
+    </script>
+  </body>
+</html>

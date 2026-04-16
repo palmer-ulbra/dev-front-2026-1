@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minha página</title>
+  </head>
+  <body>
+    <form id="form">
+      <input type="text" name="nome" value="João" />
+      <input type="text" name="email" value="joao@email.com" />
+      <input type="password" name="senha" />
+    </form>
+
+    <script>
+      const inputsTexto = document.querySelectorAll('#form input[type="text"]');
+
+      inputsTexto.forEach((input) => {
+        // zerando do valores
+        input.value = "";
+      });
+    </script>
+  </body>
+</html>

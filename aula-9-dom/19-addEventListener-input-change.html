@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minha página</title>
+  </head>
+  <body>
+    <h2>Input de Texto</h2>
+    <input type="text" id="texto" placeholder="Digite algo" />
+    <p><strong>input:</strong> <span id="textoInput">-</span></p>
+    <p><strong>change:</strong> <span id="textoChange">-</span></p>
+
+    <h2>Checkbox</h2>
+    <label>
+      <input type="checkbox" id="checkbox" />
+      Aceito os termos
+    </label>
+    <p><strong>change:</strong> <span id="checkboxChange">-</span></p>
+
+    <h2>Textarea</h2>
+    <textarea
+      id="mensagem"
+      rows="4"
+      cols="30"
+      placeholder="Digite uma mensagem"
+    ></textarea>
+    <p><strong>input:</strong> <span id="mensagemInput">-</span></p>
+    <p><strong>change:</strong> <span id="mensagemChange">-</span></p>
+
+    <h2>Select</h2>
+    <select id="selectCor">
+      <option value="">Escolha uma cor</option>
+      <option value="vermelho">Vermelho</option>
+      <option value="azul">Azul</option>
+      <option value="verde">Verde</option>
+    </select>
+    <p><strong>change:</strong> <span id="selectChange">-</span></p>
+
+    <script>
+      // Input texto
+      const texto = document.getElementById("texto");
+      texto.addEventListener("input", (e) => {
+        document.getElementById("textoInput").textContent = e.target.value;
+      });
+      texto.addEventListener("change", (e) => {
+        document.getElementById("textoChange").textContent = e.target.value;
+      });
+
+      // Checkbox
+      const checkbox = document.getElementById("checkbox");
+      checkbox.addEventListener("change", (e) => {
+        document.getElementById("checkboxChange").textContent = e.target.checked
+          ? "Marcado"
+          : "Desmarcado";
+      });
+
+      // Textarea
+      const mensagem = document.getElementById("mensagem");
+      mensagem.addEventListener("input", (e) => {
+        document.getElementById("mensagemInput").textContent = e.target.value;
+      });
+      mensagem.addEventListener("change", (e) => {
+        document.getElementById("mensagemChange").textContent = e.target.value;
+      });
+
+      // Select
+      const selectCor = document.getElementById("selectCor");
+      selectCor.addEventListener("change", (e) => {
+        document.getElementById("selectChange").textContent =
+          e.target.value || "Nenhuma cor selecionada";
+      });
+    </script>
+  </body>
+</html>

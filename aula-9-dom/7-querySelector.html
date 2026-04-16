@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minha página</title>
+  </head>
+  <body>
+    <ul id="lista">
+      <li>Maçã</li>
+      <li>Banana</li>
+      <li>Laranja</li>
+    </ul>
+
+    <script>
+      const itens = document.querySelectorAll("#lista li");
+
+      itens.forEach((item, index) => {
+        console.log(`Item ${index + 1}: ${item.textContent}`);
+      });
+    </script>
+  </body>
+</html>

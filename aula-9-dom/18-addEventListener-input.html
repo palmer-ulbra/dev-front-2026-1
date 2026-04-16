@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minha página</title>
+  </head>
+  <body>
+    <input type="text" id="campoTexto" placeholder="Digite algo aqui" />
+    <h4></h4>
+
+    <script>
+      const input = document.getElementById("campoTexto");
+      const h4 = document.querySelector("h4");
+
+      input.addEventListener("input", () => {
+        console.log("Valor atual:", input.value);
+        h4.textContent = input.value;
+      });
+    </script>
+  </body>
+</html>

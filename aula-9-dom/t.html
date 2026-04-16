@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz DOM</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f4f6f8;
+        color: #222;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 24px;
+      }
+
+      .card {
+        width: 100%;
+        max-width: 520px;
+        background: white;
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      h1 {
+        margin-top: 0;
+        font-size: 28px;
+        text-align: center;
+      }
+
+      .info {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 16px;
+        font-size: 14px;
+        color: #555;
+      }
+
+      .question {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 16px;
+        min-height: 56px;
+      }
+
+      .answers {
+        display: grid;
+        gap: 12px;
+      }
+
+      .answer-btn {
+        border: 2px solid #d0d7de;
+        background: #fff;
+        padding: 14px;
+        border-radius: 12px;
+        cursor: pointer;
+        font-size: 16px;
+        text-align: left;
+        transition: 0.2s;
+      }
+
+      .answer-btn:hover {
+        background: #f0f7ff;
+        border-color: #4a90e2;
+      }
+
+      .answer-btn.correct {
+        background: #e7f8ec;
+        border-color: #28a745;
+      }
+
+      .answer-btn.wrong {
+        background: #fdeaea;
+        border-color: #dc3545;
+      }
+
+      .answer-btn:disabled {
+        cursor: not-allowed;
+        opacity: 1;
+      }
+
+      .message {
+        margin-top: 16px;
+        min-height: 24px;
+        font-weight: bold;
+      }
+
+      .controls {
+        margin-top: 20px;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      button.next-btn,
+      button.restart-btn {
+        border: none;
+        background: #222;
+        color: white;
+        padding: 12px 18px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 15px;
+      }
+
+      button.next-btn:hover,
+      button.restart-btn:hover {
+        opacity: 0.9;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .result {
+        text-align: center;
+      }
+
+      .result h2 {
+        margin-bottom: 8px;
+      }
+
+      .result p {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div id="quiz-screen">
+        <h1>🎯 Quiz DOM</h1>
+
+        <div class="info">
+          <span id="question-count">Pergunta 1 de 5</span>
+          <span id="score">Pontos: 0</span>
+        </div>
+
+        <div id="question" class="question"></div>
+
+        <div id="answers" class="answers"></div>
+
+        <div id="message" class="message"></div>
+
+        <div class="controls">
+          <button id="next-btn" class="next-btn hidden">Próxima</button>
+        </div>
+      </div>
+
+      <div id="result-screen" class="result hidden">
+        <h2>✅ Fim do quiz</h2>
+        <p id="final-score"></p>
+        <button id="restart-btn" class="restart-btn">Jogar novamente</button>
+      </div>
+    </div>
+
+    <script>
+      const questions = [
+        {
+          question: "O que o DOM representa?",
+          answers: [
+            "Um banco de dados do navegador",
+            "Uma árvore de objetos do documento HTML",
+            "Uma linguagem de programação",
+            "Um tipo de CSS",
+          ],
+          correct: 1,
+        },
+        {
+          question: "Qual objeto representa o documento HTML carregado?",
+          answers: ["window", "screen", "document", "history"],
+          correct: 2,
+        },
+        {
+          question:
+            "Qual método seleciona o primeiro elemento que combina com um seletor CSS?",
+          answers: [
+            "querySelector",
+            "getElementsByClassName",
+            "createElement",
+            "appendChild",
+          ],
+          correct: 0,
+        },
+        {
+          question: "Qual evento dispara quando o usuário clica em um botão?",
+          answers: ["change", "submit", "scroll", "click"],
+          correct: 3,
+        },
+        {
+          question: "Qual propriedade altera o texto de um elemento?",
+          answers: ["innerColor", "textContent", "valueHTML", "fontText"],
+          correct: 1,
+        },
+      ];
+
+      const questionCountEl = document.getElementById("question-count");
+      const scoreEl = document.getElementById("score");
+      const questionEl = document.getElementById("question");
+      const answersEl = document.getElementById("answers");
+      const messageEl = document.getElementById("message");
+      const nextBtn = document.getElementById("next-btn");
+
+      const quizScreen = document.getElementById("quiz-screen");
+      const resultScreen = document.getElementById("result-screen");
+      const finalScoreEl = document.getElementById("final-score");
+      const restartBtn = document.getElementById("restart-btn");
+
+      let currentQuestionIndex = 0;
+      let score = 0;
+
+      function renderQuestion() {
+        const currentQuestion = questions[currentQuestionIndex];
+
+        questionCountEl.textContent = `Pergunta ${currentQuestionIndex + 1} de ${questions.length}`;
+        scoreEl.textContent = `Pontos: ${score}`;
+        questionEl.textContent = currentQuestion.question;
+        answersEl.innerHTML = "";
+        messageEl.textContent = "";
+        nextBtn.classList.add("hidden");
+
+        currentQuestion.answers.forEach((answer, index) => {
+          const button = document.createElement("button");
+          button.classList.add("answer-btn");
+          button.textContent = answer;
+
+          button.addEventListener("click", () => checkAnswer(index, button));
+
+          answersEl.appendChild(button);
+        });
+      }
+
+      function checkAnswer(selectedIndex, selectedButton) {
+        const currentQuestion = questions[currentQuestionIndex];
+        const buttons = document.querySelectorAll(".answer-btn");
+
+        buttons.forEach((button) => {
+          button.disabled = true;
+        });
+
+        if (selectedIndex === currentQuestion.correct) {
+          selectedButton.classList.add("correct");
+          messageEl.textContent = "🎉 Acertou!";
+          score++;
+          scoreEl.textContent = `Pontos: ${score}`;
+        } else {
+          selectedButton.classList.add("wrong");
+          buttons[currentQuestion.correct].classList.add("correct");
+          messageEl.textContent = "❌ Errou!";
+        }
+
+        nextBtn.classList.remove("hidden");
+      }
+
+      function nextQuestion() {
+        currentQuestionIndex++;
+
+        if (currentQuestionIndex < questions.length) {
+          renderQuestion();
+        } else {
+          showResult();
+        }
+      }
+
+      function showResult() {
+        quizScreen.classList.add("hidden");
+        resultScreen.classList.remove("hidden");
+        finalScoreEl.textContent = `Você fez ${score} de ${questions.length} pontos.`;
+      }
+
+      function restartQuiz() {
+        currentQuestionIndex = 0;
+        score = 0;
+        quizScreen.classList.remove("hidden");
+        resultScreen.classList.add("hidden");
+        renderQuestion();
+      }
+
+      nextBtn.addEventListener("click", nextQuestion);
+      restartBtn.addEventListener("click", restartQuiz);
+
+      renderQuestion();
+    </script>
+  </body>
+</html>

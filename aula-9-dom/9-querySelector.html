@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minha página</title>
+  </head>
+  <style>
+    .ativo {
+      color: green;
+    }
+  </style>
+  <body>
+    <div id="conteudo">
+      <p>Parágrafo 1</p>
+      <p>Parágrafo 2</p>
+    </div>
+
+    <script>
+      const paragrafos = document.querySelectorAll("#conteudo p");
+
+      paragrafos.forEach((p) => {
+        p.classList.add("ativo");
+      });
+    </script>
+  </body>
+</html>

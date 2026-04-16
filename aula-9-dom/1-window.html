@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Esses dois são equivalentes:
+      window.alert("Olá!");
+      alert("Olá!");
+
+      // Acessando a largura da janela
+      console.log(window.innerWidth);
+
+      // Executa após 2 segundos
+      setTimeout(() => {
+        console.log("Depois de 2 segundos");
+      }, 2000);
+
+      // Executa a cada 3 segundos
+      setInterval(() => {
+        console.log("Intervalo de 3 segundos");
+      }, 3000);
+
+      console.log("Idioma:", window.navigator.language);
+      console.log("Agente do navegador:", window.navigator.userAgent);
+
+      // Salvar um dado
+      window.localStorage.setItem("usuario", "João");
+
+      // Ler o dado salvo
+      const nome = window.localStorage.getItem("usuario");
+      console.log(nome); // "João"
+
+      // Remover um dado
+      window.localStorage.removeItem("usuario");
+
+      // Redirecionando a página
+      // window.location.href = "https://google.com";
+
+      // Voltar uma página
+      // window.history.back();
+
+      // Avançar uma página
+      // window.history.forward();
+
+      // Ver quantas páginas há no histórico
+      // console.log(window.history.length);
+    </script>
+  </body>
+</html>

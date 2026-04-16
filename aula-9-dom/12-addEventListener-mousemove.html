@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minha página</title>
+  </head>
+  <body>
+    <div
+      id="areaMouse"
+      style="
+        width: 300px;
+        height: 150px;
+        background: #eee;
+        border: 1px solid #ccc;
+      "
+    >
+      Mova o mouse aqui
+    </div>
+
+    <script>
+      const area = document.getElementById("areaMouse");
+
+      area.addEventListener("mousemove", (event) => {
+        area.textContent = `Posição do mouse: X=${event.clientX}, Y=${event.clientY}`;
+      });
+    </script>
+  </body>
+</html>

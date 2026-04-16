@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minha página</title>
+  </head>
+  <body>
+    <p class="destaque">Item 1</p>
+    <p class="destaque">Item 2</p>
+    <p>Item 3</p>
+
+    <script>
+      const destaques = document.querySelectorAll(".destaque");
+
+      destaques.forEach((el) => {
+        el.style.color = "red";
+      });
+    </script>
+  </body>
+</html>

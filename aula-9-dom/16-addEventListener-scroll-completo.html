@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minha página</title>
+  </head>
+  <body>
+    <style>
+      .scroll-box {
+        width: 300px;
+        height: 150px;
+        overflow-y: scroll;
+        border: 2px solid #333;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      .item {
+        height: 50px;
+        margin-bottom: 10px;
+        background-color: lightgray;
+        text-align: center;
+        line-height: 50px;
+      }
+    </style>
+
+    <div class="scroll-box" id="scrollable">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+      <div class="item">Item 4</div>
+      <div class="item">Item 5</div>
+      <div class="item">Item 6</div>
+      <div class="item">Item 7</div>
+    </div>
+
+    <p>Scroll Top: <span id="scrollTopValue">0</span>px</p>
+
+    <script>
+      const scrollableDiv = document.getElementById("scrollable");
+      const scrollTopValue = document.getElementById("scrollTopValue");
+
+      scrollableDiv.addEventListener("scroll", () => {
+        const scrollTop = scrollableDiv.scrollTop;
+        scrollTopValue.textContent = scrollTop;
+        console.log("Scroll na div! Posição:", scrollTop);
+      });
+    </script>
+  </body>
+</html>

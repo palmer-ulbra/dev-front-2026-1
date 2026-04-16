@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minha página</title>
+  </head>
+  <body>
+    <div
+      id="hoverBox"
+      style="
+        width: 200px;
+        height: 100px;
+        background: #fafafa;
+        border: 1px solid #aaa;
+        text-align: center;
+        line-height: 100px;
+      "
+    >
+      Passe o mouse aqui
+    </div>
+
+    <script>
+      const hoverBox = document.getElementById("hoverBox");
+
+      hoverBox.addEventListener("mouseenter", () => {
+        hoverBox.style.backgroundColor = "#b0e0e6";
+      });
+
+      hoverBox.addEventListener("mouseleave", () => {
+        hoverBox.style.backgroundColor = "#fafafa";
+      });
+    </script>
+  </body>
+</html>

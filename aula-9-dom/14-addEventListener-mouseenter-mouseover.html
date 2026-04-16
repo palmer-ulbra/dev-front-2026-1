@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minha página</title>
+  </head>
+  <body>
+    <style>
+      .box {
+        padding: 20px;
+        background-color: lightblue;
+      }
+
+      .child {
+        margin-top: 10px;
+        padding: 10px;
+        background-color: lightcoral;
+      }
+    </style>
+
+    <div class="box" id="box">
+      BOX (passe o mouse aqui)
+      <div class="child" id="child">CHILD</div>
+    </div>
+
+    <script>
+      const box = document.getElementById("box");
+      const child = document.getElementById("child");
+
+      box.addEventListener("mouseenter", () => {
+        console.log("mouseenter na BOX");
+      });
+
+      box.addEventListener("mouseover", () => {
+        console.log("mouseover na BOX");
+      });
+
+      child.addEventListener("mouseenter", () => {
+        console.log("mouseenter no CHILD");
+      });
+
+      child.addEventListener("mouseover", () => {
+        console.log("mouseover no CHILD");
+      });
+    </script>
+  </body>
+</html>
