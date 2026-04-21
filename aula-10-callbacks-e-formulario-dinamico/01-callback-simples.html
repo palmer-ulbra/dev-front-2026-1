@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Callback simples</title>
+  </head>
+  <body>
+    <script>
+      const somar = (a, b, callback) => {
+        const resultado = a + b;
+        callback(resultado);
+      };
+
+      const mostrarResultado = (valor) => {
+        console.log("Resultado:", valor);
+      };
+
+      somar(3, 5, mostrarResultado);
+    </script>
+  </body>
+</html>

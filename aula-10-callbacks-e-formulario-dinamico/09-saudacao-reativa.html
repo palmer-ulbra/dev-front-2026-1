@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saudação reativa</title>
+  </head>
+  <body>
+    <h2>Olá, <span id="saidaNome">visitante</span></h2>
+    <input type="text" id="campoNome" placeholder="Digite seu nome" />
+
+    <script>
+      const campoNome = document.querySelector("#campoNome");
+      const saidaNome = document.querySelector("#saidaNome");
+
+      campoNome.addEventListener("input", () => {
+        saidaNome.textContent = campoNome.value || "visitante";
+      });
+    </script>
+  </body>
+</html>

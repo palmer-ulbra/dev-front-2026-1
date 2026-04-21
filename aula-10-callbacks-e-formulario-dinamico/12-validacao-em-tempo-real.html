@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validação em tempo real</title>
+  </head>
+  <body>
+    <form id="formEmail">
+      <input id="campoEmail" type="email" placeholder="Digite seu e-mail" />
+      <span id="erroEmail"></span>
+      <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+      const formEmail = document.querySelector("#formEmail");
+      const campoEmail = document.querySelector("#campoEmail");
+      const erroEmail = document.querySelector("#erroEmail");
+
+      campoEmail.addEventListener("input", () => {
+        if (campoEmail.value.includes("@")) {
+          erroEmail.textContent = "";
+        } else {
+          erroEmail.textContent = "Digite um e-mail válido.";
+        }
+      });
+
+      formEmail.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        if (!campoEmail.value.includes("@")) {
+          erroEmail.textContent = "Corrija o e-mail antes de enviar.";
+          return;
+        }
+
+        erroEmail.textContent = "";
+        console.log("Formulário enviado com sucesso");
+      });
+    </script>
+  </body>
+</html>

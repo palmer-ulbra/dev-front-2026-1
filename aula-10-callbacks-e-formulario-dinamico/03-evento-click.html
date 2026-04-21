@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Evento click</title>
+  </head>
+  <body>
+    <button id="meuBotao">Clique aqui</button>
+
+    <script>
+      const botao = document.querySelector("#meuBotao");
+
+      botao.addEventListener("click", () => {
+        console.log("Botão clicado!");
+      });
+
+      botao.addEventListener("click", (event) => {
+        console.log(event);
+      });
+    </script>
+  </body>
+</html>

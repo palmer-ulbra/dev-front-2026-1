@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário simples</title>
+  </head>
+  <body>
+    <form id="meuFormulario">
+      <input type="text" id="nome" placeholder="Digite seu nome" />
+      <input type="email" id="email" placeholder="Digite seu e-mail" />
+      <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+      const form = document.querySelector("#meuFormulario");
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const nome = document.querySelector("#nome").value;
+        const email = document.querySelector("#email").value;
+
+        console.log("Nome:", nome);
+        console.log("Email:", email);
+      });
+    </script>
+  </body>
+</html>

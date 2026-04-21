@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mostrar e ocultar senha</title>
+  </head>
+  <body>
+    <div>
+      <input id="senha" type="password" placeholder="Digite sua senha" />
+      <button id="toggleSenha" type="button">👁️</button>
+    </div>
+
+    <script>
+      const senha = document.querySelector("#senha");
+      const toggleSenha = document.querySelector("#toggleSenha");
+
+      toggleSenha.addEventListener("click", () => {
+        if (senha.type === "password") {
+          senha.type = "text";
+          toggleSenha.textContent = "🙈";
+        } else {
+          senha.type = "password";
+          toggleSenha.textContent = "👁️";
+        }
+      });
+    </script>
+  </body>
+</html>

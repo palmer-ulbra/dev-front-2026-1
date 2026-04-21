@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contador</title>
+  </head>
+  <body>
+    <p id="contador">0</p>
+    <button id="mais">+</button>
+    <button id="menos">-</button>
+
+    <script>
+      let valor = 0;
+
+      const contador = document.querySelector("#contador");
+      const mais = document.querySelector("#mais");
+      const menos = document.querySelector("#menos");
+
+      const atualizarContador = () => {
+        contador.textContent = valor;
+      };
+
+      mais.addEventListener("click", () => {
+        valor++;
+        atualizarContador();
+      });
+
+      menos.addEventListener("click", () => {
+        valor--;
+        atualizarContador();
+      });
+    </script>
+  </body>
+</html>

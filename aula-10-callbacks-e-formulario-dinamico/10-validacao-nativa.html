@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validação nativa</title>
+  </head>
+  <body>
+    <form id="formValidacao">
+      <input type="text" required minlength="3" placeholder="Nome" />
+      <input type="email" required placeholder="E-mail" />
+      <input type="password" required minlength="6" placeholder="Senha" />
+      <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+      const formValidacao = document.querySelector("#formValidacao");
+
+      formValidacao.addEventListener("submit", (event) => {
+        event.preventDefault();
+        console.log("Formulário válido! Dados prontos para enviar.");
+      });
+    </script>
+  </body>
+</html>

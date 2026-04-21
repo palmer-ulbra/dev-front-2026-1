@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diferença entre eventos</title>
+  </head>
+  <body>
+    <input id="campo" type="text" placeholder="Digite algo" />
+    <button id="btn">Clique</button>
+
+    <hr />
+
+    <form id="form">
+      <button type="submit">Enviar formulário</button>
+    </form>
+
+    <script>
+      const campo = document.querySelector("#campo");
+      const btn = document.querySelector("#btn");
+      const form = document.querySelector("#form");
+
+      campo.addEventListener("input", () => {
+        console.log("input:", campo.value);
+      });
+
+      campo.addEventListener("change", () => {
+        console.log("change:", campo.value);
+      });
+
+      btn.addEventListener("click", () => {
+        console.log("click no botão");
+      });
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        console.log("submit do formulário");
+      });
+    </script>
+  </body>
+</html>

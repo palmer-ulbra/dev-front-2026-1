@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FormData</title>
+  </head>
+  <body>
+    <form id="cadastro">
+      <input type="email" name="email" placeholder="E-mail" />
+      <input type="password" name="password" placeholder="Senha" />
+      <button type="submit">Entrar</button>
+    </form>
+
+    <script>
+      const cadastro = document.querySelector("#cadastro");
+
+      cadastro.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const dados = new FormData(cadastro);
+
+        const email = dados.get("email");
+        const password = dados.get("password");
+
+        console.log("Email:", email);
+        console.log("Senha:", password);
+      });
+    </script>
+  </body>
+</html>
