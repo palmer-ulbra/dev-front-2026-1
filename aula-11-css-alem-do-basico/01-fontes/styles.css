@@ -1,0 +1,32 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.page {
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 24px;
+}
+
+h1 {
+  font-family: Georgia, serif;
+  font-size: 40px;
+}
+
+.intro {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.card {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+}
+
+.price {
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+}

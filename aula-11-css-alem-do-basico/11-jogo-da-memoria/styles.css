@@ -1,0 +1,110 @@
+:root {
+  --color-background: #fef3c7;
+  --color-frente: #f97316;
+  --color-frente-dark: #ea580c;
+  --color-verso: #ffffff;
+  --color-text: #1f2937;
+
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+
+  --radius-md: 12px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+.page {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 8px;
+}
+
+.dica {
+  color: #6b7280;
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Tabuleiro: grid 4 colunas */
+.tabuleiro {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+}
+
+/* Carta: container que dá perspectiva para o efeito 3D */
+.carta {
+  /* aspect-ratio: 1; */
+  width: 118px;
+  height: 118px;
+  perspective: 800px;
+  cursor: pointer;
+  animation: aparecer 0.4s ease;
+}
+
+/* Frente e verso compartilham posição */
+.face {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-md);
+  display: grid;
+  place-content: center;
+  font-size: 40px;
+  font-weight: bold;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 0.5s ease;
+}
+
+/* Como as faces são absolutas, a carta precisa de position relative */
+.carta {
+  position: relative;
+}
+
+.frente {
+  background: var(--color-frente);
+  color: white;
+}
+
+.verso {
+  background: var(--color-verso);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: rotateY(180deg);
+}
+
+/* Ao passar o mouse, viramos as duas faces */
+.carta:hover .frente {
+  transform: rotateY(180deg);
+}
+
+.carta:hover .verso {
+  transform: rotateY(360deg);
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Acessibilidade: respeita quem prefere menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none;
+    transition: none;
+  }
+}

@@ -1,0 +1,37 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #111827;
+  color: white;
+}
+
+.page {
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 24px;
+}
+
+.links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+a {
+  color: #93c5fd;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #bfdbfe;
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: 3px solid #facc15;
+  outline-offset: 4px;
+}
+
+a:active {
+  color: #f97316;
+}
