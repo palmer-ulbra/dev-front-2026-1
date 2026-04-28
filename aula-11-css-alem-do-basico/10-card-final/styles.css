@@ -1,101 +1,277 @@
-:root {
-  --color-primary: #f97316;
-  --color-primary-dark: #ea580c;
-  --color-background: #fff7ed;
-  --color-surface: #ffffff;
-  --color-text: #1f2937;
-  --color-muted: #6b7280;
-  --color-focus: #2563eb;
+/* ============================================================
+   Cineflix — Card Final
+   Aplicando tudo da aula 11:
+   - Variáveis CSS
+   - Pseudo-classes (:hover, :focus)
+   - Transition + Transform (animar na GPU)
+   - @keyframes (entrada do hero e dos cards)
+   - prefers-reduced-motion (acessibilidade)
+   ============================================================ */
 
+:root {
+  --color-bg: #0b0b0f;
+  --color-surface: #1a1a22;
+  --color-text: #f5f5f5;
+  --color-muted: #a1a1aa;
+  --color-primary: #e50914;
+  --color-primary-dark: #b00710;
+  --color-focus: #60a5fa;
+
+  --spacing-sm: 8px;
   --spacing-md: 16px;
   --spacing-lg: 24px;
+  --spacing-xl: 40px;
 
-  --radius-lg: 18px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: var(--color-background);
+  background: var(--color-bg);
   color: var(--color-text);
 }
 
-.page {
-  min-height: 100vh;
-  display: grid;
-  place-content: center;
-  padding: var(--spacing-lg);
+/* ---------- Topbar ---------- */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md) var(--spacing-xl);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
-/* Card: animação de entrada + hover suave */
-.card {
-  max-width: 380px;
-  background: var(--color-surface);
-  padding: var(--spacing-lg);
-  border-radius: var(--radius-lg);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-  animation: appear 0.5s ease;
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+.logo {
+  color: var(--color-primary);
+  font-weight: 900;
+  font-size: 24px;
+  letter-spacing: 2px;
+  text-decoration: none;
 }
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.14);
+.menu {
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.menu a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.menu a:hover {
+  color: var(--color-muted);
+}
+
+.menu a:focus {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 120px var(--spacing-xl) 80px;
+  min-height: 70vh;
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(11, 11, 15, 0.95) 0%,
+      rgba(11, 11, 15, 0.6) 50%,
+      rgba(11, 11, 15, 0.3) 100%
+    ),
+    linear-gradient(to bottom, transparent 60%, var(--color-bg) 100%),
+    var(--hero-image);
+  background-size: cover;
+  background-position: center;
+  animation: fade-in 0.7s ease;
+}
+
+.hero > * {
+  max-width: 640px;
 }
 
 .badge {
   display: inline-block;
-  margin-bottom: 12px;
-  color: var(--color-primary-dark);
-  font-weight: bold;
-}
-
-h1 {
-  margin: 0;
-  font-size: 32px;
-}
-
-p {
-  color: var(--color-muted);
-  line-height: 1.6;
-}
-
-.info {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-/* Link estilizado como botão, com hover, focus e transition */
-a {
-  display: inline-block;
+  margin-bottom: var(--spacing-md);
+  padding: 4px 10px;
   background: var(--color-primary);
   color: white;
-  padding: 12px 16px;
-  border-radius: 999px;
-  text-decoration: none;
+  font-size: 12px;
   font-weight: bold;
+  border-radius: var(--radius-sm);
+  letter-spacing: 1px;
+}
+
+.hero h1 {
+  margin: 0 0 var(--spacing-md);
+  font-size: 56px;
+  line-height: 1.05;
+}
+
+.hero p {
+  color: var(--color-muted);
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: var(--spacing-lg);
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+/* ---------- Botões (link estilizado) ---------- */
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: var(--radius-md);
+  font-weight: bold;
+  text-decoration: none;
   transition:
     background 0.2s ease,
     transform 0.2s ease;
 }
 
-a:hover {
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
   background: var(--color-primary-dark);
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
-a:focus {
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+}
+
+.btn:focus {
   outline: 3px solid var(--color-focus);
-  outline-offset: 4px;
+  outline-offset: 3px;
 }
 
-@keyframes appear {
+/* ---------- Trilho (rail) ---------- */
+.rail {
+  padding: 0 var(--spacing-xl) var(--spacing-xl);
+}
+
+.rail h2 {
+  margin: 0 0 var(--spacing-md);
+  font-size: 22px;
+}
+
+.rail-track {
+  display: flex;
+  gap: var(--spacing-md);
+  overflow-x: auto;
+  padding: var(--spacing-md) 0;
+}
+
+/* esconde scrollbar feia, mantém scroll horizontal */
+.rail-track::-webkit-scrollbar {
+  height: 6px;
+}
+.rail-track::-webkit-scrollbar-thumb {
+  background: var(--color-surface);
+  border-radius: 999px;
+}
+
+/* ---------- Card ---------- */
+.card {
+  flex: 0 0 200px;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  animation: slide-up 0.5s ease backwards;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* delay escalonado para os cards aparecerem em sequência */
+.card:nth-child(1) { animation-delay: 0.05s; }
+.card:nth-child(2) { animation-delay: 0.1s; }
+.card:nth-child(3) { animation-delay: 0.15s; }
+.card:nth-child(4) { animation-delay: 0.2s; }
+.card:nth-child(5) { animation-delay: 0.25s; }
+.card:nth-child(6) { animation-delay: 0.3s; }
+
+.card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.card:focus-within {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.card-cover {
+  height: 280px;
+  background-image:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.1) 50%,
+      transparent 100%
+    ),
+    var(--cover);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: var(--spacing-sm);
+  position: relative;
+}
+
+.rank {
+  font-size: 80px;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.55);
+  -webkit-text-stroke: 2px white;
+  line-height: 1;
+}
+
+.card-info {
+  padding: var(--spacing-md);
+}
+
+.card-info h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+}
+
+.card-info p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+/* ---------- Animações ---------- */
+@keyframes fade-in {
   from {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -103,10 +279,23 @@ a:focus {
   }
 }
 
-/* Acessibilidade: respeita quem prefere menos movimento */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Acessibilidade ---------- */
 @media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none;
-    transition: none;
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
   }
 }

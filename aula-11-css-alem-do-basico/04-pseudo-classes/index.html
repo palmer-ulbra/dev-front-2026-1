@@ -9,15 +9,44 @@
   <body>
     <main class="page">
       <form class="form">
-        <h1>Entrar no PedeRango</h1>
+        <h1>Entrar no Sistema</h1>
+        <p class="hint">
+          Passe o mouse, clique e use o teclado para ver os estados.
+        </p>
 
-        <label for="email">E-mail</label>
+        <label for="email">E-mail <span class="tag">:focus</span></label>
         <input id="email" type="email" placeholder="seuemail@exemplo.com" />
 
-        <label for="password">Senha</label>
+        <label for="password">Senha <span class="tag">:focus</span></label>
         <input id="password" type="password" placeholder="Digite sua senha" />
 
-        <button type="submit">Entrar</button>
+        <label for="cupom">
+          Cupom de desconto <span class="tag">:disabled</span>
+        </label>
+        <input
+          id="cupom"
+          type="text"
+          value="Indisponível para sua conta"
+          disabled
+        />
+
+        <label class="check">
+          <input type="checkbox" id="remember" />
+          <span>Lembrar de mim neste dispositivo</span>
+          <span class="tag">:checked</span>
+        </label>
+
+        <label class="check">
+          <input type="checkbox" id="terms" />
+          <span>Li e aceito os termos de uso</span>
+          <span class="tag">:checked</span>
+        </label>
+
+        <button type="submit">
+          Entrar <span class="tag tag--light">:hover / :active</span>
+        </button>
+
+        <a class="forgot" href="#">Esqueci minha senha</a>
       </form>
     </main>
   </body>

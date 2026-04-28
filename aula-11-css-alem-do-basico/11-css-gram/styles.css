@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #fafafa;
+  color: #262626;
+  padding: 32px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+header h1 {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+header p {
+  color: #666;
+}
+
+header code {
+  background: #efefef;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.foto {
+  background: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.foto .img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-image: url("https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=600&q=80");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.foto figcaption {
+  padding: 12px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* ---- Filtros ---- */
+
+/* Original: sem filtro */
+
+.foto._1977 .img {
+  filter: contrast(1.1) brightness(1.1) saturate(1.3) sepia(0.5);
+}
+
+.foto.aden .img {
+  filter: hue-rotate(-20deg) contrast(0.9) saturate(0.85) brightness(1.2);
+}
+
+.foto.brannan .img {
+  filter: sepia(0.5) contrast(1.4);
+}
+
+.foto.clarendon .img {
+  filter: contrast(1.2) saturate(1.35);
+}
+
+.foto.earlybird .img {
+  filter: contrast(0.9) sepia(0.2);
+}
+
+.foto.gingham .img {
+  filter: brightness(1.05) hue-rotate(-10deg);
+}
+
+.foto.hudson .img {
+  filter: contrast(0.9) brightness(1.2) saturate(1.1);
+}
+
+.foto.inkwell .img {
+  filter: sepia(0.3) contrast(1.1) brightness(1.1) grayscale(1);
+}
+
+.foto.lofi .img {
+  filter: saturate(1.1) contrast(1.5);
+}
+
+.foto.mayfair .img {
+  filter: contrast(1.1) saturate(1.1);
+}
+
+.foto.moon .img {
+  filter: grayscale(1) contrast(1.1) brightness(1.1);
+}
+
+.foto.nashville .img {
+  filter: sepia(0.2) contrast(1.2) brightness(1.05) saturate(1.2);
+}
+
+.foto.reyes .img {
+  filter: sepia(0.22) brightness(1.1) contrast(0.85) saturate(0.75);
+}
+
+.foto.rise .img {
+  filter: brightness(1.05) sepia(0.2) contrast(0.9) saturate(0.9);
+}
+
+.foto.slumber .img {
+  filter: saturate(0.66) brightness(1.05);
+}
+
+.foto.toaster .img {
+  filter: contrast(1.5) brightness(0.9);
+}
+
+.foto.valencia .img {
+  filter: contrast(1.08) brightness(1.08) sepia(0.08);
+}
+
+.foto.walden .img {
+  filter: brightness(1.1) hue-rotate(-10deg) sepia(0.3) saturate(1.6);
+}
+
+.foto.willow .img {
+  filter: grayscale(0.5) contrast(0.95) brightness(0.9);
+}
+
+.foto.xpro2 .img {
+  filter: sepia(0.3) contrast(1.3) saturate(1.3);
+}
+
+/* ---- Filtros com camadas (mix-blend-mode + ::after) ---- */
+
+.foto._1977 .img::after,
+.foto.aden .img::after,
+.foto.brannan .img::after,
+.foto.gingham .img::after,
+.foto.nashville .img::after,
+.foto.toaster .img::after,
+.foto.walden .img::after,
+.foto.xpro2 .img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* sobreposição rosada do 1977 */
+.foto._1977 .img::after {
+  background: rgba(243, 106, 188, 0.3);
+  mix-blend-mode: screen;
+}
+
+/* tom levemente azulado do Aden */
+.foto.aden .img::after {
+  background: linear-gradient(to right, rgba(66, 10, 14, 0.2), transparent);
+  mix-blend-mode: darken;
+}
+
+/* tom amarelado do Brannan */
+.foto.brannan .img::after {
+  background: rgba(161, 44, 199, 0.31);
+  mix-blend-mode: lighten;
+}
+
+/* xadrez clarinho do Gingham */
+.foto.gingham .img::after {
+  background: rgba(230, 230, 250, 0.4);
+  mix-blend-mode: soft-light;
+}
+
+/* rosa pastel do Nashville */
+.foto.nashville .img::after {
+  background: rgba(247, 176, 153, 0.56);
+  mix-blend-mode: darken;
+}
+
+/* laranja queimado do Toaster (radial) */
+.foto.toaster .img::after {
+  background: radial-gradient(circle, #804e0f, #3b003b);
+  mix-blend-mode: screen;
+}
+
+/* tom amarelado do Walden */
+.foto.walden .img::after {
+  background: rgba(204, 68, 0, 0.3);
+  mix-blend-mode: screen;
+}
+
+/* tom roxo do X-Pro II (radial) */
+.foto.xpro2 .img::after {
+  background: radial-gradient(circle, rgba(0, 91, 154, 0.6), rgba(230, 193, 61, 0.6));
+  mix-blend-mode: color-burn;
+}

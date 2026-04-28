@@ -3,25 +3,99 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Card Final</title>
+    <title>Cineflix — Card Final</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="page">
-      <article class="card">
-        <span class="badge">Aberto agora</span>
+    <header class="topbar">
+      <a href="#" class="logo">CINEFLIX</a>
+      <nav class="menu">
+        <a href="#">Início</a>
+        <a href="#">Séries</a>
+        <a href="#">Filmes</a>
+        <a href="#">Minha lista</a>
+      </nav>
+    </header>
 
-        <h1>Burger do Bairro</h1>
-
-        <p>Hambúrguer artesanal, batata crocante e entrega rápida.</p>
-
-        <div class="info">
-          <span>⭐ 4.8</span>
-          <span>🚚 30-40 min</span>
+    <main>
+      <section class="hero" style="--hero-image: url('images/hero.jpg');">
+        <span class="badge">Em alta hoje</span>
+        <h1>O Último Algoritmo</h1>
+        <p>
+          Uma desenvolvedora descobre que o código que escreveu pode prever o
+          futuro — mas alguém quer apagar tudo antes do deploy final.
+        </p>
+        <div class="hero-actions">
+          <a href="#" class="btn btn-primary">▶ Assistir</a>
+          <a href="#" class="btn btn-ghost">+ Minha lista</a>
         </div>
+      </section>
 
-        <a href="#menu">Ver cardápio</a>
-      </article>
+      <section class="rail">
+        <h2>Populares na Cineflix</h2>
+
+        <div class="rail-track">
+          <article class="card" style="--cover: url('images/movie1.jpg');">
+            <div class="card-cover">
+              <span class="rank">1</span>
+            </div>
+            <div class="card-info">
+              <h3>Stranger Code</h3>
+              <p>Suspense • 2h 10min</p>
+            </div>
+          </article>
+
+          <article class="card" style="--cover: url('images/movie2.jpg');">
+            <div class="card-cover">
+              <span class="rank">2</span>
+            </div>
+            <div class="card-info">
+              <h3>Deep Refactor</h3>
+              <p>Drama • 1h 48min</p>
+            </div>
+          </article>
+
+          <article class="card" style="--cover: url('images/movie3.jpg');">
+            <div class="card-cover">
+              <span class="rank">3</span>
+            </div>
+            <div class="card-info">
+              <h3>The Merge</h3>
+              <p>Ação • 2h 32min</p>
+            </div>
+          </article>
+
+          <article class="card" style="--cover: url('images/movie4.jpg');">
+            <div class="card-cover">
+              <span class="rank">4</span>
+            </div>
+            <div class="card-info">
+              <h3>Hotfix</h3>
+              <p>Comédia • 1h 32min</p>
+            </div>
+          </article>
+
+          <article class="card" style="--cover: url('images/movie5.jpg');">
+            <div class="card-cover">
+              <span class="rank">5</span>
+            </div>
+            <div class="card-info">
+              <h3>404: Sem Saída</h3>
+              <p>Terror • 1h 55min</p>
+            </div>
+          </article>
+
+          <article class="card" style="--cover: url('images/movie6.jpg');">
+            <div class="card-cover">
+              <span class="rank">6</span>
+            </div>
+            <div class="card-info">
+              <h3>Async Hearts</h3>
+              <p>Romance • 1h 40min</p>
+            </div>
+          </article>
+        </div>
+      </section>
     </main>
   </body>
 </html>

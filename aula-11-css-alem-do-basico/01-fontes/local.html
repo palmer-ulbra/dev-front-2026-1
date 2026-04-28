@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fonte Local</title>
+
+    <style>
+      /*
+        Para usar uma fonte LOCAL (que vem junto com o projeto):
+
+        1) Baixe o arquivo da fonte (.ttf, .otf ou .woff2)
+           Aqui usamos a "Pacifico", baixada de:
+           https://fonts.google.com/specimen/Pacifico
+           (também está no repositório: github.com/google/fonts)
+
+        2) Coloque o arquivo dentro do projeto, ex.: pasta "fonts/"
+
+        3) Declare a fonte com @font-face informando onde ela está:
+      */
+      @font-face {
+        font-family: "Pacifico";
+        src: url("fonts/Pacifico-Regular.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /*
+        4) Agora é só usar o nome dela em font-family, como qualquer outra.
+      */
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #fff7ed;
+        color: #111827;
+        margin: 0;
+      }
+
+      .page {
+        max-width: 720px;
+        margin: 40px auto;
+        padding: 24px;
+      }
+
+      h1 {
+        font-family: "Pacifico", cursive;
+        font-size: 56px;
+        color: #b45309;
+        margin: 0 0 8px;
+      }
+
+      .intro {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 24px;
+      }
+
+      .card {
+        background: white;
+        padding: 24px;
+        border-radius: 12px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      }
+
+      .card h2 {
+        font-family: "Pacifico", cursive;
+        font-size: 32px;
+        color: #b45309;
+        margin: 0 0 8px;
+      }
+
+      .descricao {
+        font-size: 16px;
+        color: #4b5563;
+        margin: 0 0 12px;
+      }
+
+      .price {
+        font-family: "Courier New", monospace;
+        font-weight: bold;
+        font-size: 22px;
+        color: #047857;
+      }
+
+      .dica {
+        font-size: 14px;
+        color: #6b7280;
+        line-height: 1.6;
+        margin-top: 16px;
+      }
+
+      code {
+        background: #fde68a;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: "Courier New", monospace;
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <h1>Cantinho do Sabor</h1>
+
+      <p class="intro">
+        Esta página usa uma <strong>fonte local</strong> chamada
+        <em>Pacifico</em>, que está dentro da pasta
+        <code>fonts/</code> do projeto.
+      </p>
+
+      <section class="card">
+        <h2>Sorvete Artesanal</h2>
+        <p class="descricao">
+          Três bolas no copo ou casquinha, com calda à sua escolha.
+        </p>
+        <span class="price">R$ 18,50</span>
+      </section>
+
+      <p class="dica">
+        Vantagem da fonte local: funciona <strong>offline</strong> e não
+        depende de servidor externo. Use <code>@font-face</code> para
+        registrar e depois aplique normalmente em
+        <code>font-family</code>.
+      </p>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fontes do Google</title>
+
+    <!--
+      1) Vamos no site https://fonts.google.com
+      2) Escolhemos as fontes que queremos usar
+      3) Clicamos em "Get embed code" e copiamos as tags <link>
+      4) Colamos aqui no <head>
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&family=Fira+Code:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        background: #f3f4f6;
+        color: #111827;
+        margin: 0;
+      }
+
+      .page {
+        max-width: 720px;
+        margin: 40px auto;
+        padding: 24px;
+      }
+
+      h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 44px;
+        margin-bottom: 8px;
+      }
+
+      .intro {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 24px;
+      }
+
+      .card {
+        background: white;
+        padding: 24px;
+        border-radius: 12px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      }
+
+      .card h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 28px;
+        margin: 0 0 8px;
+      }
+
+      .descricao {
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+        color: #4b5563;
+        margin: 0 0 12px;
+      }
+
+      .price {
+        font-family: "Fira Code", monospace;
+        font-weight: 500;
+        font-size: 22px;
+        color: #047857;
+      }
+
+      .dica {
+        font-size: 14px;
+        color: #6b7280;
+        line-height: 1.6;
+        margin-top: 16px;
+      }
+
+      code {
+        background: #e5e7eb;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: "Fira Code", monospace;
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <h1>Cardápio do Dia</h1>
+
+      <p class="intro">
+        Esta página usa <strong>fontes do Google Fonts</strong>: Playfair
+        Display (serif), Roboto (sans-serif) e Fira Code (monospace).
+      </p>
+
+      <section class="card">
+        <h2>Combo da Casa</h2>
+        <p class="descricao">
+          Hambúrguer artesanal, batata frita e refrigerante.
+        </p>
+        <span class="price">R$ 34,90</span>
+      </section>
+
+      <p class="dica">
+        Para usar uma fonte do Google: importe com <code>&lt;link&gt;</code>
+        no <code>&lt;head&gt;</code> e depois use o nome dela em
+        <code>font-family</code>. Pronto, o navegador baixa a fonte
+        automaticamente.
+      </p>
+    </main>
+  </body>
+</html>
