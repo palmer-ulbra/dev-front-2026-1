@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeria com fetch + then</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        padding: 24px;
+      }
+
+      #root {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 16px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 12px;
+        padding: 16px;
+        text-align: center;
+      }
+
+      .card img {
+        width: 100%;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script>
+      const root = document.querySelector("#root");
+
+      fetch("https://rickandmortyapi.com/api/character")
+        .then((response) => response.json())
+        .then((data) => {
+          let html = "";
+
+          data.results.forEach((character) => {
+            html += `
+              <div class="card">
+                <img src="${character.image}" alt="${character.name}" />
+                <h2>${character.name}</h2>
+                <p>${character.status}</p>
+                <p>${character.species}</p>
+              </div>
+            `;
+          });
+
+          root.innerHTML = html;
+        });
+    </script>
+  </body>
+</html>

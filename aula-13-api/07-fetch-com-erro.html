@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fetch com catch</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        padding: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">Carregando... ⏳</div>
+
+    <script>
+      const root = document.querySelector("#root");
+
+      // URL errada de propósito para cair no catch
+      fetch("https://rickandmortyapi.com/api/url-que-nao-existe-xpto")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Resposta não OK");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          root.innerHTML = "Personagens carregados! 🎉";
+        })
+        .catch((error) => {
+          console.log("Deu erro:", error);
+          root.innerHTML = "Erro ao buscar personagens 😢";
+        });
+    </script>
+  </body>
+</html>

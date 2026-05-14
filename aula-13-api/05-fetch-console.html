@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Primeira chamada com fetch</title>
+  </head>
+  <body>
+    <h1>Abra o console (F12) para ver os dados 👀</h1>
+
+    <script>
+      fetch("https://rickandmortyapi.com/api/character")
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+          console.log("Lista de personagens:", data.results);
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card com JavaScript</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        padding: 24px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 12px;
+        padding: 16px;
+        text-align: center;
+        max-width: 240px;
+      }
+
+      .card img {
+        width: 100%;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script>
+      const root = document.querySelector("#root");
+
+      const character = {
+        name: "Rick Sanchez",
+        status: "Alive",
+        species: "Human",
+        image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+      };
+
+      root.innerHTML = `
+        <div class="card">
+          <img src="${character.image}" alt="${character.name}" />
+          <h2>${character.name}</h2>
+          <p>${character.status}</p>
+          <p>${character.species}</p>
+        </div>
+      `;
+    </script>
+  </body>
+</html>
