@@ -1,0 +1,147 @@
+main {
+  max-width: 460px;
+  margin: 40px auto;
+  padding: 28px;
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  margin: 0 0 24px;
+  font-size: 1.8rem;
+  color: #fff;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.form input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  outline: none;
+}
+
+.form input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.actions button {
+  padding: 12px 22px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 16px;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.06s ease, box-shadow 0.06s ease, filter 0.15s ease;
+}
+
+/* Botão Adicionar (verde) — 3/4 da largura */
+.actions button:nth-of-type(1) {
+  flex: 3;
+  background: #58cc02;
+  box-shadow: 0 5px 0 #46a302;
+}
+
+/* Botão Limpar tudo (vermelho) — 1/4 da largura */
+.actions button:nth-of-type(2) {
+  flex: 1;
+  background: #ff4b4b;
+  box-shadow: 0 5px 0 #cc3a3a;
+}
+
+.actions button:hover {
+  filter: brightness(1.05);
+}
+
+/* Efeito de afundar ao apertar */
+.actions button:active {
+  transform: translateY(5px);
+  box-shadow: 0 0 0 transparent;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+
+  /* Caderno vintage: papel + linhas horizontais + margem vermelha */
+  --line-height: 40px;
+  background-color: #f5ecd7;
+  background-image:
+    /* margem vermelha vertical */
+    linear-gradient(to right, transparent 38px, #e7a6a0 38px, #e7a6a0 40px, transparent 40px),
+    /* linhas horizontais azuladas */
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent calc(var(--line-height) - 1px),
+      #aac4d6 calc(var(--line-height) - 1px),
+      #aac4d6 var(--line-height)
+    );
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: var(--line-height);
+  padding: 0 12px 0 52px;
+  color: #2f4b7c;
+  font-family: "Caveat", cursive;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Tarefa concluída (taxada) */
+li.done {
+  color: #9a9486;
+  text-decoration: line-through;
+  text-decoration-color: #c0392b;
+  text-decoration-thickness: 2px;
+}
+
+li.done::before {
+  background: #58cc02;
+}
+
+li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #8a7a5c;
+  flex-shrink: 0;
+}
+
+p {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.85);
+}
