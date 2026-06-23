@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
 
 :root {
-  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
-  color: #1e293b;
+  font-family: "Plus Jakarta Sans", system-ui, "Segoe UI", Roboto, sans-serif;
+  color: #f8fafc;
 }
 
 * {
@@ -15,9 +16,63 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  overflow: hidden;
+  position: relative;
+  background: #0f0c29;
+  background: linear-gradient(135deg, #24243e 0%, #302b63 50%, #0f0c29 100%);
+}
+
+/* Orbs coloridos flutuando atrás do vidro */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+  opacity: 0.75;
+}
+
+body::before {
+  width: 420px;
+  height: 420px;
+  top: -120px;
+  left: -100px;
+  background: radial-gradient(circle at 30% 30%, #ff6ec4, #7873f5);
+  animation: float-a 14s ease-in-out infinite;
+}
+
+body::after {
+  width: 380px;
+  height: 380px;
+  bottom: -120px;
+  right: -80px;
+  background: radial-gradient(circle at 70% 70%, #00f5a0, #00d9f5);
+  animation: float-b 16s ease-in-out infinite;
+}
+
+@keyframes float-a {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(140px, 120px) scale(1.15);
+  }
+}
+
+@keyframes float-b {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-120px, -100px) scale(1.2);
+  }
 }
 
 #root {
   width: 100%;
+  position: relative;
+  z-index: 1;
 }

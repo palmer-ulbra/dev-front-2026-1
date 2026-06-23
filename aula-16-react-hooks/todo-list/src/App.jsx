@@ -1,20 +1,16 @@
-import { useEffect, useState } from "react";
-import TaskList from "./components/TaskList";
+import { useState } from "react";
 import "./App.css";
+import TaskList from "./TaskList";
+import { playAdd, playToggle, playClear, playHover } from "./sounds";
 
 function App() {
   const [task, setTask] = useState("");
-  const [tasks, setTasks] = useState(() => {
-    const savedTasks = localStorage.getItem("tasks");
-    if (savedTasks) {
-      return JSON.parse(savedTasks);
-    }
-    return [];
-  });
-
-  useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-  }, [tasks]);
+  const [tasks, setTasks] = useState(() => [
+    {
+      text: "jogar voley",
+      done: false,
+    },
+  ]);
 
   function addTask() {
     if (task.trim() === "") {
@@ -24,6 +20,7 @@ function App() {
     setTasks([...tasks, { text: task, done: false }]);
 
     setTask("");
+    playAdd();
   }
 
   function toggleTask(index) {
@@ -35,32 +32,54 @@ function App() {
     });
 
     setTasks(newTasks);
+    playToggle();
+  }
+
+  function editTask(index, newText) {
+    const newTasks = tasks.map((item, i) => {
+      if (i === index) {
+        return { ...item, text: newText };
+      }
+      return item;
+    });
+
+    setTasks(newTasks);
   }
 
   function clearTasks() {
     setTasks([]);
+    playClear();
   }
 
   return (
-    <main>
-      <h1>Minhas tarefas de hoje</h1>
+    <>
+      <main>
+        <h1>Minhas tarefas de hoje</h1>
 
-      <div className="form">
-        <input
-          type="text"
-          placeholder="Digite uma tarefa"
-          value={task}
-          onChange={(event) => setTask(event.target.value)}
-        />
-
-        <div className="actions">
-          <button onClick={addTask}>Adicionar</button>
-          <button onClick={clearTasks}>Limpar tudo</button>
+        <div className="form">
+          <input
+            type="text"
+            placeholder="Digite uma tarefa"
+            value={task}
+            onChange={(event) => setTask(event.target.value)}
+            onKeyDown={(event) => {
+              if (event.key === "Enter") {
+                addTask();
+              }
+            }}
+          />
+          <div className="actions">
+            <button onClick={addTask} onMouseEnter={playHover}>
+              Adicionar
+            </button>
+            <button onClick={clearTasks} onMouseEnter={playHover}>
+              Limpar tudo
+            </button>
+          </div>
         </div>
-      </div>
-
-      <TaskList tasks={tasks} onToggle={toggleTask} />
-    </main>
+        <TaskList tasks={tasks} onToggle={toggleTask} onEdit={editTask} />
+      </main>
+    </>
   );
 }
 
